@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "LavaTexture/lava_diffuse"
+	"$envmapmask" "LavaTexture/lava_spec"
+	"$surfaceprop" "Slime"
+	"$nodecal" 1
+	"$Selfillum" "1"
+}
