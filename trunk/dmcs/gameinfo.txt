@@ -1,8 +1,8 @@
 "GameInfo"
 {
-	game	"DMCS"
-	title	"HALF+LIFE'"
-	title2	"deathmatch"
+	game	"Deathmatch Classic: Source"
+	title	"Deathmatch Classic"
+	title2	"Source"
 	type 	multiplayer_only
 	nomodels 0
 	nohimodel 1
