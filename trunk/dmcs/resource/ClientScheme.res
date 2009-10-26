@@ -718,7 +718,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"  "HL2MP"
+				"name"  "Verdana"
 				"tall"  "46"
 				"weight" "0"
 				"additive" "0"
