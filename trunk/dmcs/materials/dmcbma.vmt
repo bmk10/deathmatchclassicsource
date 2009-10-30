@@ -1,4 +1,6 @@
 "LightmappedGeneric"
 {
-      "$baseTexture" "dmcbma"
+	"$basetexture" "DMCBMA"
+	"$normalmap" "DMCBMA_normal"
+	"$surfaceprop" "Metal"
 }

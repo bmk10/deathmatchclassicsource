@@ -1,4 +1,6 @@
 "LightmappedGeneric"
 {
-      "$baseTexture" "-0out_wall9"
+	"$basetexture" "-0out_wall9"
+	"$normalmap" "-0out_wall9_normal"
+	"$surfaceprop" "Concrete"
 }
