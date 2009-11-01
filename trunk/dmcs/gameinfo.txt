@@ -1,9 +1,13 @@
 "GameInfo"
 {
-	game	"Deathmatch Classic: Source"
-	title	"Deathmatch Classic"
-	title2	"Source"
-	type 	multiplayer_only
+	game		"Deathmatch Classic: Source"
+	title		"Deathmatch Classic"
+	title2		"Source"
+	type 		multiplayer_only
+	
+	icon		logo
+	
+	developer	"Anti-Matter Industries"
 	nomodels 0
 	nohimodel 1
 	nocrosshair 1
