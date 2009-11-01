@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "weapons/shot/sgvc"
+	"$normalmap" "weapons/shot/sgvc_normal"
+	"$surfaceprop" "Metal"
+}
