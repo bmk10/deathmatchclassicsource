@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "weapons/crowbar/cbtop"
+	"$normalmap" "weapons/crowbar/cbtop_normal"
+	"$surfaceprop" "Metal"
+}

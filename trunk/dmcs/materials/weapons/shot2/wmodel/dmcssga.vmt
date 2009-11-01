@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "weapons/shot2/wmodel/dmcssga"
+	"$normalmap" "weapons/shot2/wmodel/dmcssga_normal"
+	"$surfaceprop" "Metal"
+}

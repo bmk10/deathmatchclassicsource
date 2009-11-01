@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "weapons/nail2/dmcsngv"
+	"$normalmap" "weapons/nail2/dmcsngv_normal"
+	"$surfaceprop" "Metal"
+}
