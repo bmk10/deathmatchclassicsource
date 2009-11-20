@@ -1,6 +1,6 @@
 "LightmappedGeneric"
 {
-	"$basetexture" "vtfs/-0out_wall8"
+	"$basetexture" "-0out_wall8"
 	"$normalmap" "-0out_wall8_normal"
 	"$surfaceprop" "Concrete"
 }
