@@ -1,4 +1,6 @@
 "LightmappedGeneric"
 {
-      "$baseTexture" "elev2_flr"
+	"$basetexture" "elev2_flr"
+	"$normalmap" "elev2_flr_normal"
+	"$surfaceprop" "Metal"
 }

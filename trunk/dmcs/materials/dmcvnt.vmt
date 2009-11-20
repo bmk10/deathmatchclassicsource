@@ -1,4 +1,6 @@
 "LightmappedGeneric"
 {
-      "$baseTexture" "dmcvnt"
+	"$basetexture" "DMCVNT"
+	"$normalmap" "DMCVNT_normal"
+	"$surfaceprop" "MetalVent"
 }
