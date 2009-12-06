@@ -1,0 +1,6 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "dmcmetal/DMC_CEIL3"
+	"$normalmap" "dmcmetal/DMC_CEIL3_normal"
+	"$surfaceprop" "Metal"
+}
