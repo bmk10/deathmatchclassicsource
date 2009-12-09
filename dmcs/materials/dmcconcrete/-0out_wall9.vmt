@@ -1,6 +1,10 @@
 "LightmappedGeneric"
 {
-	"$basetexture" "dmcconcrete/-0out_wall9"
-	"$normalmap" "dmcconcrete/-0out_wall9_normal"
-	"$surfaceprop" "Concrete"
+	"$basetexture" 			"dmcconcrete/-0out_wall9"
+	"$bumpmap" 			"dmcconcrete/-0out_wall9_normal"
+	"$surfaceprop" 			"Concrete"
+	$envmaptint			"[.1 .1 .1]"
+	$normalmapalphaenvmapmask	1
+	$envmap				env_cubemap
+	%keywords			keresh
 }

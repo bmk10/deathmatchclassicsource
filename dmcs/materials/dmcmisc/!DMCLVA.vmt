@@ -1,6 +1,10 @@
 "LightmappedGeneric"
 {
-	"$basetexture" "dmcmisc/!DMCLVA"
-	"$normalmap" "dmcmisc/!DMCLVA_normal"
-	"$surfaceprop" "Rock"
+	"$basetexture" 			"dmcmisc/!DMCLVA"
+	"$bumpmap" 			"dmcmisc/!DMCLVA_normal"
+	"$surfaceprop" 			"Rock"
+	"$envmaptint"			"[.1 .1 .1]"
+	"$selfillum" 			1
+	"$normalmapalphaenvmapmask"	1
+	"$envmap"			env_cubemap
 }
