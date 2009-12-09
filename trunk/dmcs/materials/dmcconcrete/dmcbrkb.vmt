@@ -1,6 +1,9 @@
 "LightmappedGeneric"
 {
-	"$basetexture" "dmcconcrete/DMCBRKB"
-	"$normalmap" "dmcconcrete/DMCBRKB_normal"
-	"$surfaceprop" "Concrete"
+	"$baseTexture" 			"dmcconcrete/dmcbrkb"
+	"$bumpmap" 			"dmcconcrete/dmcbrkb_n"
+	"$envmap" 			"env_cubemap"
+	"$envmaptint" 			"[ .1 .1 .1 ]"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$surfaceprop"			"tile"
 }

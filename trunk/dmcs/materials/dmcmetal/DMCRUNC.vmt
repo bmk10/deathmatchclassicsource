@@ -1,6 +1,10 @@
 "LightmappedGeneric"
 {
-	"$basetexture" "dmcmetal/DMCRUNC"
-	"$normalmap" "dmcmetal/DMCRUNC_normal"
-	"$surfaceprop" "Metal"
+	"$basetexture" 			"dmcmetal/DMCRUNC"
+	"$bumpmap" 			"dmcmetal/DMCRUNC_normal"
+	"$surfaceprop" 			"Metal"
+	$envmaptint			"[.1 .1 .1]"
+	$normalmapalphaenvmapmask	1
+	$envmap				env_cubemap
+	%keywords			keresh
 }
