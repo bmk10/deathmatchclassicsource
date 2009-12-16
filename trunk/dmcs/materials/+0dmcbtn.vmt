@@ -1,7 +1,0 @@
-"LightmappedGeneric"
-{
-	"$basetexture" "+0DMCBTN"
-	"$normalmap" "+0DMCBTN_normal"
-	"$surfaceprop" "MetalPanel"
-	"$Selfillum" "1"
-}
