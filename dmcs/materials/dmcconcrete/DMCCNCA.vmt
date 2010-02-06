@@ -1,4 +1,10 @@
 "LightmappedGeneric"
 {
 	"$basetexture" "dmcconcrete/DMCCNCA"
+	"$bumpmap" "dmcconcrete/DMCCNCA_normal"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint" "[.2 .1 .1]"
+	"$surfaceprop" "Concrete"
+	"$keyword" "Flash-Killer"
 }
