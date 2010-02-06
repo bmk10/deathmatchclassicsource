@@ -5,9 +5,9 @@
 	title2		"Source"
 	type 		multiplayer_only
 	
-	icon		logo
+	icon		dmcs
 	
-	developer	"Anti-Matter Industries"
+	developer	"DMC:S Devs"
 	nomodels 0
 	nohimodel 1
 	nocrosshair 1
