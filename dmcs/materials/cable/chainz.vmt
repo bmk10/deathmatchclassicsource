@@ -1,0 +1,11 @@
+VertexLitGeneric_DX6
+{
+	"$basetexture" 		"cable\chainz"
+	"$bumpmap"		"cable\chainz_n"
+	"$alphatest" 		"1"
+	//"$vertexcolor" 		1
+	"$nocull" 			1
+	//"$MinLight" 		1
+	//"$MaxLight" 		1
+
+}
