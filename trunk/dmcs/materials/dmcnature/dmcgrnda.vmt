@@ -1,4 +1,6 @@
 "LightmappedGeneric"
 {
-      "$baseTexture" "dmcnature/dmcgrnda"
+	"$baseTexture" "dmcnature/dmcgrnda"
+	"$surfaceprop" "grass"
+
 }
