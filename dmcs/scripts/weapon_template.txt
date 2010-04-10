@@ -1,0 +1,75 @@
+// DMC:S Weapon Template
+
+WeaponData
+{
+	// Weapon data is loaded by both the Game and Client DLLs.
+	"printname"	"Enter Weapon Name"
+	"viewmodel"				"ViewModel Path here"
+	"playermodel"			"WorldModel Path here"
+	"anim_prefix"			"Animation Prefix"
+	"bucket"				"1" // Here what bucket the weapon will be stored in (ie. 1 for the crowbar, 2 for pistol etc."
+	"bucket_position"		"1" // Here is the position in the vertical bucket list (i.e. for 1, Crowbar is 1, Gravity Gun is 2)
+
+	"clip_size"				"45" // Enter Clip Size here
+	"clip2_size"			"-1" // Secondary Clip Size here
+
+	"default_clip"			"45" // Default amount of primary ammo when picked up.
+	"default_clip2"			"-1" // Default amount of secondary ammo when picked up.
+
+	"primary_ammo"			"Primary Ammo Type Here"
+	"secondary_ammo"		"Secondary Ammo Type Here"
+
+	"weight"				"3" // Determines the weapons imporance when the game autoselects one.
+	"item_flags"			"0" // Here you can place the Item Flags.
+	"damage"			"5" // Damage for the primary ammunition.
+
+	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
+	SoundData
+	{
+		"reload"			"Reload Sound here"
+		"reload_npc"		"NPC Reload Sound here"
+		"empty"				"Empty Sound Here"
+		"single_shot"		"Single Shot Sound here"
+		"single_shot_npc"	"NPC Single Shot Sound here"
+		"double_shot"		"Double Shot Sound here"
+		"burst"				"Burst Sound here"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"font"		"WeaponIcons"
+				"character"	"a"		// This will point to the SMG Icon, you need to author a font to change this.
+		}
+		"weapon_s"
+		{	
+				"font"		"WeaponIconsSelected"
+				"character"	"a"		// This will point to the SMG Icon, you need to author a font to change this.
+		}
+		"ammo"
+		{
+				"font"		"WeaponIcons"
+				"character"	"r"		// This will point to the SMG Ammo Icon, you need to author a font to change this.
+		}
+		"ammo2"
+		{
+				"font"		"WeaponIcons"
+				"character"	"t"		// This will point to the Grenade Ammo.
+		}
+		"crosshair"
+		{
+				"font"		"Crosshairs"
+				"character"	"Q"		// Crosshair Icon.
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+	}
+}
