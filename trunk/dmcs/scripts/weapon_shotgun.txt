@@ -3,8 +3,8 @@
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"#HL2_Shotgun"
-	"viewmodel"				"models/weapons/v_shotgun.mdl"
+	"printname"	"Double Barreled Shotgun"
+	"viewmodel"				"models/weapons/shot2/v_shot2.mdl"
 	"playermodel"			"models/weapons/w_shotgun.mdl"
 	"anim_prefix"			"shotgun"
 	"bucket"				"3"
