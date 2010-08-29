@@ -1,4 +1,6 @@
 "LightmappedGeneric"
 {
-      "$baseTexture" "dmcconcrete/dmcplsa"
+	"$baseTexture" 			"dmcconcrete/dmcplsa"
+	"$surfaceprop" 			"Concrete"
+
 }
