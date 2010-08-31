@@ -1,4 +1,10 @@
 "LightmappedGeneric"
 {
-      "$baseTexture" "dmcwood/dmctrch"
+	"$basetexture" "dmcwood/dmctrch"
+	"$bumpmap" "dmcwood/dmctrch_normal"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint" "[.1 .1 .1]"
+	"$surfaceprop" "Wood_Solid"
+	"%keywords" "dmcs"
 }
