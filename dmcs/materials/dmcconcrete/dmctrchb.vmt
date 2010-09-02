@@ -1,4 +1,7 @@
 "LightmappedGeneric"
 {
-      "$baseTexture" "dmcconcrete/dmctrchb"
+	"$basetexture" "dmcwood/dmctrchb"
+	"$surfaceprop" "Rock"
+	"$selfillum" "1"
+	"%keywords" "dmcs"
 }
