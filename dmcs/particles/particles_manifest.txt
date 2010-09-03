@@ -1,0 +1,5 @@
+particles_manifest
+{
+	file 	"particles/torch_fire.pcf"
+	file	"partciles/water_fog.pcf"
+}

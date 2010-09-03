@@ -1,0 +1,10 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "dmcwood/dmctrch"
+	"$bumpmap" "dmcwood/dmctrch_normal"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint" "[.1 .1 .1]"
+	"$surfaceprop" "wood_solid"
+	"%keywords" "dmcs"
+}

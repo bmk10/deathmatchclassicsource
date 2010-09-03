@@ -1,0 +1,7 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "dmcconcrete/dmctrchb"
+	"$surfaceprop" "rock"
+	"$selfillum" "1"
+	"%keywords" "dmcs"
+}
