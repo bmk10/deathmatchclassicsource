@@ -17,11 +17,11 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(TEMP)\$(SolutionName)\$(ProjectName)\$(ConfigurationName)"
-			IntermediateDirectory="$(OutDir)"
+			OutputDirectory="..\..\..\..\dmcsource\bin"
+			IntermediateDirectory="..\..\..\..\..\..\..\..\Users\Admin\Desktop\objectsblah\serverlawl"
 			ConfigurationType="2"
 			CharacterSet="2"
-			BuildLogFile="$(OutDir)\BuildLog.htm"
+			BuildLogFile="C:\Users\Admin\Desktop\objectsblah\BuildLog.htm"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -61,11 +61,11 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="cbase.h"
 				PrecompiledHeaderFile="$(OutDir)/$(ProjectName).pch"
-				AssemblerListingLocation="$(OutDir)/"
-				ObjectFile="$(OutDir)/"
-				ProgramDataBaseFileName="$(OutDir)/"
+				AssemblerListingLocation="$(IntDir)/"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName="$(IntDir)/"
 				GenerateXMLDocumentationFiles="false"
-				XMLDocumentationFileName="$(OutDir)/"
+				XMLDocumentationFileName="$(IntDir)/"
 				BrowseInformation="0"
 				BrowseInformationFile="$(OutDir)/"
 				WarningLevel="4"
@@ -139,11 +139,11 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(TEMP)\$(SolutionName)\$(ProjectName)\$(ConfigurationName)"
-			IntermediateDirectory="$(OutDir)"
+			OutputDirectory="..\..\..\..\dmcsource\bin"
+			IntermediateDirectory="..\..\..\..\..\..\..\..\Users\Admin\Desktop\objectsblah\serverlawl"
 			ConfigurationType="2"
 			CharacterSet="2"
-			BuildLogFile="$(OutDir)\BuildLog.htm"
+			BuildLogFile="C:\Users\Admin\Desktop\objectsblah\BuildLog.htm"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -187,11 +187,11 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="cbase.h"
 				PrecompiledHeaderFile="$(OutDir)/$(ProjectName).pch"
-				AssemblerListingLocation="$(OutDir)/"
-				ObjectFile="$(OutDir)/"
-				ProgramDataBaseFileName="$(OutDir)/"
+				AssemblerListingLocation="$(IntDir)/"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName="$(IntDir)/"
 				GenerateXMLDocumentationFiles="false"
-				XMLDocumentationFileName="$(OutDir)/"
+				XMLDocumentationFileName="$(IntDir)/"
 				BrowseInformation="0"
 				BrowseInformationFile="$(OutDir)/"
 				WarningLevel="4"
