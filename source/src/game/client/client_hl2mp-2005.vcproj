@@ -2899,6 +2899,10 @@
 						>
 					</File>
 					<File
+						RelativePath="..\shared\hl2mp\weapon_shotgundouble.cpp"
+						>
+					</File>
+					<File
 						RelativePath="..\shared\hl2mp\weapon_slam.cpp"
 						>
 					</File>
