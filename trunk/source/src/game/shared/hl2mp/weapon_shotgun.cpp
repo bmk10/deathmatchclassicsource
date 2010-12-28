@@ -57,7 +57,7 @@ public:
 	void ItemHolsterFrame( void );
 	void ItemPostFrame( void );
 	void PrimaryAttack( void );
-	void SecondaryAttack( void );
+//	void SecondaryAttack( void );
 	void DryFire( void );
 	virtual float GetFireRate( void ) { return 0.7; };
 
@@ -346,7 +346,7 @@ void CWeaponShotgun::PrimaryAttack( void )
 //
 //
 //-----------------------------------------------------------------------------
-void CWeaponShotgun::SecondaryAttack( void )
+/*  void CWeaponShotgun::SecondaryAttack( void )
 {
 	// Only the player fires this way so we can cast
 	CBasePlayer *pPlayer = ToBasePlayer( GetOwner() );
@@ -391,7 +391,7 @@ void CWeaponShotgun::SecondaryAttack( void )
 	}
 
 	m_bNeedPump = true;
-}
+}  */
 
 //-----------------------------------------------------------------------------
 // Purpose: Override so shotgun can do mulitple reloads in a row
