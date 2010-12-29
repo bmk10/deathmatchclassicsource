@@ -1,0 +1,16 @@
+WeaponData
+{
+	printname	"Lightning Gun"
+	bucket		"0"
+	bucket_position	"1"
+	item_flags	"0"
+	primary_ammo	"Lightning"
+	"viewmodel"			"models/weapons/v_irifle.mdl"
+	"playermodel"			"models/weapons/w_irifle.mdl"
+	weight		"0"
+	"anim_prefix"			"ar2"
+
+	SoundData
+	{
+	}
+}
