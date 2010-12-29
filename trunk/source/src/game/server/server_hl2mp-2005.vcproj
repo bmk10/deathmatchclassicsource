@@ -4363,6 +4363,10 @@
 						>
 					</File>
 					<File
+						RelativePath="..\shared\hl2mp\weapon_shaft.cpp"
+						>
+					</File>
+					<File
 						RelativePath="..\shared\hl2mp\weapon_shotgun.cpp"
 						>
 					</File>

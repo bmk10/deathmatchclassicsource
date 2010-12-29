@@ -30,7 +30,7 @@
 //#define BOLT_MODEL			"models/crossbow_bolt.mdl"
 #define BOLT_MODEL	"models/weapons/w_missile_closed.mdl"
 
-#define BOLT_AIR_VELOCITY	3500
+#define BOLT_AIR_VELOCITY	1500
 #define BOLT_WATER_VELOCITY	1500
 #define	BOLT_SKIN_NORMAL	0
 #define BOLT_SKIN_GLOW		1
@@ -398,12 +398,12 @@ public:
 	
 	virtual void	Precache( void );
 	virtual void	PrimaryAttack( void );
-	virtual void	SecondaryAttack( void );
+//	virtual void	SecondaryAttack( void );
 	virtual bool	Deploy( void );
 	virtual bool	Holster( CBaseCombatWeapon *pSwitchingTo = NULL );
-	virtual bool	Reload( void );
-	virtual void	ItemPostFrame( void );
-	virtual void	ItemBusyFrame( void );
+//	virtual bool	Reload( void );
+//	virtual void	ItemPostFrame( void );
+//	virtual void	ItemBusyFrame( void );
 	virtual bool	SendWeaponAnim( int iActivity );
 
 #ifndef CLIENT_DLL
@@ -498,10 +498,10 @@ IMPLEMENT_ACTTABLE(CWeaponCrossbow);
 //-----------------------------------------------------------------------------
 CWeaponCrossbow::CWeaponCrossbow( void )
 {
-	m_bReloadsSingly	= true;
+//	m_bReloadsSingly	= true;
 	m_bFiresUnderwater	= true;
-	m_bInZoom			= false;
-	m_bMustReload		= false;
+//	m_bInZoom			= false;
+//	m_bMustReload		= false;
 }
 
 #define	CROSSBOW_GLOW_SPRITE	"sprites/light_glow02_noz.vmt"
@@ -531,35 +531,35 @@ void CWeaponCrossbow::Precache( void )
 //-----------------------------------------------------------------------------
 void CWeaponCrossbow::PrimaryAttack( void )
 {
-	if ( m_bInZoom && g_pGameRules->IsMultiplayer() )
-	{
+//	if ( m_bInZoom && g_pGameRules->IsMultiplayer() )
+//	{
 //		FireSniperBolt();
+//		FireBolt();
+//	}
+//	else
+//	{
 		FireBolt();
-	}
-	else
-	{
-		FireBolt();
-	}
+//	}
 
 	// Signal a reload
-	m_bMustReload = true;
+//	m_bMustReload = true;
 
-	SetWeaponIdleTime( gpGlobals->curtime + SequenceDuration( ACT_VM_PRIMARYATTACK ) );
+//	SetWeaponIdleTime( gpGlobals->curtime + SequenceDuration( ACT_VM_PRIMARYATTACK ) );
 }
 
 //-----------------------------------------------------------------------------
 // Purpose:
 //-----------------------------------------------------------------------------
-void CWeaponCrossbow::SecondaryAttack( void )
+/*  void CWeaponCrossbow::SecondaryAttack( void )
 {
 	//NOTENOTE: The zooming is handled by the post/busy frames
-}
+} */
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 // Output : Returns true on success, false on failure.
 //-----------------------------------------------------------------------------
-bool CWeaponCrossbow::Reload( void )
+/* bool CWeaponCrossbow::Reload( void )
 {
 	if ( BaseClass::Reload() )
 	{
@@ -568,12 +568,12 @@ bool CWeaponCrossbow::Reload( void )
 	}
 
 	return false;
-}
+}  */
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CWeaponCrossbow::CheckZoomToggle( void )
+/* void CWeaponCrossbow::CheckZoomToggle( void )
 {
 	CBasePlayer *pPlayer = ToBasePlayer( GetOwner() );
 	
@@ -581,21 +581,21 @@ void CWeaponCrossbow::CheckZoomToggle( void )
 	{
 		ToggleZoom();
 	}
-}
+}  */
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CWeaponCrossbow::ItemBusyFrame( void )
+/* void CWeaponCrossbow::ItemBusyFrame( void )
 {
 	// Allow zoom toggling even when we're reloading
 	CheckZoomToggle();
-}
+} */
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CWeaponCrossbow::ItemPostFrame( void )
+/* void CWeaponCrossbow::ItemPostFrame( void )
 {
 	// Allow zoom toggling
 	CheckZoomToggle();
@@ -606,7 +606,7 @@ void CWeaponCrossbow::ItemPostFrame( void )
 	}
 
 	BaseClass::ItemPostFrame();
-}
+} */
 
 //-----------------------------------------------------------------------------
 // Purpose: 
