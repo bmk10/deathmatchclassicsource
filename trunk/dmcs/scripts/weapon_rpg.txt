@@ -1,13 +1,13 @@
-// Missile Launcher
+// Rocket Launcher
 
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"#HL2_RPG"
+	"printname"	"Rocket Launcher"
 	"viewmodel"				"models/weapons/v_rpg.mdl"
 	"playermodel"			"models/weapons/w_rocket_launcher.mdl"
 	"anim_prefix"			"missile launcher"
-	"bucket"				"4"
+	"bucket"				"3"
 	"bucket_position"		"1"
 	"autoswitchfrom"		"1"
 
