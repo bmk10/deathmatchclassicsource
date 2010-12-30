@@ -1,8 +1,8 @@
 "GameInfo"
 {
-	game		"Deathmatch Classic: Source"
+	game		"Deathmatch Classic: Source Beta"
 	title		"Deathmatch Classic"
-	title2		"Source"
+	title2		"Source    Beta"
 	type 		multiplayer_only
 	
 	icon		dmcs
