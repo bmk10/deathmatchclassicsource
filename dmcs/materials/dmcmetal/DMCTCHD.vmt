@@ -1,6 +1,5 @@
 "LightmappedGeneric"
 {
 	"$basetexture"	"dmcmetal/DMCTCHD"
-	"$translucent" 1
 	"$bumpmap" 		"dmcmetal/DMCTCHD_normal"
 }
