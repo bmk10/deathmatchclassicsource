@@ -207,9 +207,11 @@ void CHL2MP_Player::GiveAllItems( void )
 //	CBasePlayer::GiveAmmo( 5,	"AR2AltFire" );
 //	CBasePlayer::GiveAmmo( 255,	"SMG1");
 //	CBasePlayer::GiveAmmo( 1,	"smg1_grenade");
-	CBasePlayer::GiveAmmo( 255,	"Buckshot");
+	CBasePlayer::GiveAmmo( 100,	"Buckshot");
 //	CBasePlayer::GiveAmmo( 32,	"357" );
-	CBasePlayer::GiveAmmo( 3,	"rpg_round");
+	CBasePlayer::GiveAmmo( 100,	"rpg_round");
+	CBasePlayer::GiveAmmo( 200, "XBowBolt" );
+	CBasePlayer::GiveAmmo( 200, "Cells");
 
 //	CBasePlayer::GiveAmmo( 1,	"grenade" );
 //	CBasePlayer::GiveAmmo( 2,	"slam" );
@@ -226,8 +228,10 @@ void CHL2MP_Player::GiveAllItems( void )
 	GiveNamedItem( "weapon_shotgundouble" );
 	GiveNamedItem( "weapon_shaft" );
 //	GiveNamedItem( "weapon_frag" );
+	GiveNamedItem( "weapon_nailgun" );
+	GiveNamedItem( "weapon_nailgunsuper" );
 	
-	GiveNamedItem( "weapon_crossbow" );
+//	GiveNamedItem( "weapon_crossbow" );
 	
 	GiveNamedItem( "weapon_rpg" );
 
@@ -242,7 +246,7 @@ void CHL2MP_Player::GiveDefaultItems( void )
 //	CBasePlayer::GiveAmmo( 255,	"Pistol");
 //	CBasePlayer::GiveAmmo( 45,	"SMG1");
 //	CBasePlayer::GiveAmmo( 1,	"grenade" );
-	CBasePlayer::GiveAmmo( 50,	"Buckshot");
+	CBasePlayer::GiveAmmo( 25,	"Buckshot");
 //	CBasePlayer::GiveAmmo( 6,	"357" );
 
 
@@ -263,7 +267,7 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	}
 	else
 	{
-		Weapon_Switch( Weapon_OwnsThisType( "weapon_crowbar" ) );
+		Weapon_Switch( Weapon_OwnsThisType( "weapon_shotgun" ) );
 	}
 }
 

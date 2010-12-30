@@ -4303,10 +4303,6 @@
 						>
 					</File>
 					<File
-						RelativePath="..\shared\hl2mp\weapon_crossbow.cpp"
-						>
-					</File>
-					<File
 						RelativePath="..\shared\hl2mp\weapon_crowbar.cpp"
 						>
 					</File>
@@ -4340,6 +4336,14 @@
 					</File>
 					<File
 						RelativePath="..\shared\hl2mp\weapon_hl2mpbasehlmpcombatweapon.h"
+						>
+					</File>
+					<File
+						RelativePath="..\shared\hl2mp\weapon_nailgun.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\shared\hl2mp\weapon_nailgunsuper.cpp"
 						>
 					</File>
 					<File
