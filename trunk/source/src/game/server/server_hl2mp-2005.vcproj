@@ -4343,10 +4343,6 @@
 						>
 					</File>
 					<File
-						RelativePath="..\shared\hl2mp\weapon_nailgunsuper.cpp"
-						>
-					</File>
-					<File
 						RelativePath="..\shared\hl2mp\weapon_physcannon.cpp"
 						>
 					</File>

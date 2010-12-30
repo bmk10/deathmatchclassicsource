@@ -27,8 +27,8 @@
 //#define BOLT_MODEL			"models/crossbow_bolt.mdl"
 #define BOLT_MODEL	"models/weapons/w_missile_closed.mdl"
 
-#define BOLT_AIR_VELOCITY	1500
-#define BOLT_WATER_VELOCITY	1500
+#define BOLT_AIR_VELOCITY	2000
+#define BOLT_WATER_VELOCITY	2000
 #define	BOLT_SKIN_NORMAL	0
 #define BOLT_SKIN_GLOW		1
 
@@ -480,8 +480,8 @@ void CWeaponNailgun::PrimaryAttack( void )
 	GetOwner()->RemoveAmmo( 1, GetPrimaryAmmoType() );
 	WeaponSound( SINGLE );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.6f;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.6f;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.4f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.4f;
 }
 
 void CWeaponNailgun::DryFire( void )
