@@ -1,4 +1,5 @@
 "LightmappedGeneric"
 {
-	"$basetexture" "dmcmetal/pfab_vent1"
+	"$basetexture"	"dmcmetal/pfab_vent1"
+	"$bumpmap" 		"dmcmetal/pfab_vent1_normal"
 }

@@ -1,4 +1,5 @@
 "LightmappedGeneric"
 {
-      "$baseTexture" "dmcmetal/generic012"
+	"$basetexture"	"dmcmetal/generic012"
+	"$bumpmap" 		"dmcmetal/generic012_normal"
 }
