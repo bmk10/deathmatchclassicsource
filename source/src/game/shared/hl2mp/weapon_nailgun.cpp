@@ -480,8 +480,8 @@ void CWeaponNailgun::PrimaryAttack( void )
 	GetOwner()->RemoveAmmo( 1, GetPrimaryAmmoType() );
 	WeaponSound( SINGLE );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.4f;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.4f;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.1f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.1f;
 }
 
 void CWeaponNailgun::DryFire( void )
