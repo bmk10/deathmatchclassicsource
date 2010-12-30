@@ -928,10 +928,10 @@ CAmmoDef *GetAmmoDef()
 	{
 		bInitted = true;
 
-		def.AddAmmoType("XBowBolt",			DMG_BULLET,					TRACER_LINE,			0,			0,			10,			BULLET_IMPULSE(800, 8000),	0 );
-		def.AddAmmoType("Buckshot",			DMG_BULLET | DMG_BUCKSHOT,	TRACER_LINE,			0,			0,			30,			BULLET_IMPULSE(400, 1200),	0 );
-		def.AddAmmoType("RPG_Round",		DMG_BURN,					TRACER_NONE,			0,			0,			3,			0,							0 );
-		def.AddAmmoType("Lightning",		DMG_DISSOLVE,				TRACER_LINE,			0,			0,			5,			0,							0 );
+		def.AddAmmoType("XBowBolt",			DMG_BULLET,					TRACER_LINE,			0,			0,			200,			BULLET_IMPULSE(800, 8000),	0 );
+		def.AddAmmoType("Buckshot",			DMG_BULLET | DMG_BUCKSHOT,	TRACER_LINE,			0,			0,			100,			BULLET_IMPULSE(400, 1200),	0 );
+		def.AddAmmoType("RPG_Round",		DMG_BURN,					TRACER_NONE,			0,			0,			100,			0,							0 );
+		def.AddAmmoType("Cells",		    DMG_DISSOLVE,				TRACER_LINE,			0,			0,			200,			0,							0 );
 	}
 
 	return &def;

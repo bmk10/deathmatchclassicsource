@@ -34,7 +34,7 @@ private:
 public:
 	virtual const Vector& GetBulletSpread( void )
 	{
-		static Vector cone = VECTOR_CONE_3DEGREES;
+		static Vector cone = VECTOR_CONE_5DEGREES;
 		return cone;
 	}
 
@@ -45,6 +45,7 @@ public:
 	void ItemHolsterFrame( void );
 	void ItemPostFrame( void );
 	void PrimaryAttack( void );
+	void DryFire( void );
 	virtual float GetFireRate( void ) { return 0.1; };
 
 	CWeaponShotgun(void);
@@ -73,15 +74,14 @@ void CWeaponShotgun::Pump( void )
 	if ( pOwner == NULL )
 		return;
 
-	m_bNeedPump = false;
-
 	WeaponSound( SPECIAL1 );
 
 	// Finish reload animation
 	SendWeaponAnim( ACT_SHOTGUN_PUMP );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + SequenceDuration();
-	m_flNextPrimaryAttack	= gpGlobals->curtime + SequenceDuration();
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.6f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.6f;			//SequenceDuration()
+	m_bNeedPump = false;
 }
 void CWeaponShotgun::PrimaryAttack( void )
 {
@@ -133,13 +133,34 @@ void CWeaponShotgun::ItemPostFrame( void )
 		return;
 	}
 
-	PrimaryAttack();
-
-	if ((m_bNeedPump) && (m_flNextPrimaryAttack <= gpGlobals->curtime))
+	if ( pOwner->m_nButtons & IN_ATTACK )
 	{
+		if ( !HasPrimaryAmmo() )
+		{
+			DryFire();
+			return;
+		}
+		else
+		{
+		PrimaryAttack();
 		Pump();
+		WeaponIdle();
+		}
+		
 		return;
 	}
+	// -----------------------
+	//  No buttons down
+	// -----------------------
+	if (!((pOwner->m_nButtons & IN_ATTACK) || (pOwner->m_nButtons & IN_ATTACK2)))
+	{
+		// no fire buttons down
+		if ( !ReloadOrSwitchWeapons()  )
+		{
+			WeaponIdle();
+		}
+	}
+
 }
 
 CWeaponShotgun::CWeaponShotgun( void )
@@ -161,4 +182,12 @@ void CWeaponShotgun::ItemHolsterFrame( void )
 	// We can't be active
 	if ( GetOwner()->GetActiveWeapon() == this )
 		return;
+}
+
+void CWeaponShotgun::DryFire( void )
+{
+	WeaponSound(EMPTY);
+	SendWeaponAnim( ACT_VM_DRYFIRE );
+	
+	m_flNextPrimaryAttack = gpGlobals->curtime + 1;
 }

@@ -24,11 +24,13 @@ public:
 		m_flDamageTime = FLT_MAX;
 	}
 
+#ifndef CLIENT_DLL
 	void Precache()
 	{
 		UTIL_PrecacheOther( "env_beam" ); 
 		BaseClass::Precache();
 	}
+#endif
 
 	bool Holster( CBaseCombatWeapon* pSwitchingTo )
 	{

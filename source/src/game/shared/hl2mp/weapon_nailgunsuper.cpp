@@ -1,4 +1,4 @@
-// Nailgun, take 1
+// Super Nailgun, take 1
 // By Jethro
 
 #include "cbase.h"
@@ -42,13 +42,13 @@ void TE_StickyBolt( IRecipientFilter& filter, float delay,	Vector vecDirection, 
 //-----------------------------------------------------------------------------
 // Crossbow Bolt
 //-----------------------------------------------------------------------------
-class CCrossbowBolt : public CBaseCombatCharacter
+class CCrossbowBoltSuper : public CBaseCombatCharacter
 {
-	DECLARE_CLASS( CCrossbowBolt, CBaseCombatCharacter );
+	DECLARE_CLASS( CCrossbowBoltSuper, CBaseCombatCharacter );
 
 public:
-	CCrossbowBolt() { };
-	~CCrossbowBolt();
+	CCrossbowBoltSuper() { };
+	~CCrossbowBoltSuper();
 
 	Class_T Classify( void ) { return CLASS_NONE; }
 
@@ -59,7 +59,7 @@ public:
 	void BoltTouch( CBaseEntity *pOther );
 	bool CreateVPhysics( void );
 	unsigned int PhysicsSolidMaskForEntity() const;
-	static CCrossbowBolt *BoltCreate( const Vector &vecOrigin, const QAngle &angAngles, int iDamage, CBasePlayer *pentOwner = NULL );
+	static CCrossbowBoltSuper *BoltCreate( const Vector &vecOrigin, const QAngle &angAngles, int iDamage, CBasePlayer *pentOwner = NULL );
 
 protected:
 
@@ -73,9 +73,9 @@ protected:
 	DECLARE_DATADESC();
 	DECLARE_SERVERCLASS();
 };
-LINK_ENTITY_TO_CLASS( crossbow_bolt, CCrossbowBolt );
+LINK_ENTITY_TO_CLASS( crossbow_bolt, CCrossbowBoltSuper );
 
-BEGIN_DATADESC( CCrossbowBolt )
+BEGIN_DATADESC( CCrossbowBoltSuper )
 	// Function Pointers
 	DEFINE_FUNCTION( BubbleThink ),
 	DEFINE_FUNCTION( BoltTouch ),
@@ -86,13 +86,13 @@ BEGIN_DATADESC( CCrossbowBolt )
 
 END_DATADESC()
 
-IMPLEMENT_SERVERCLASS_ST( CCrossbowBolt, DT_CrossbowBolt )
+IMPLEMENT_SERVERCLASS_ST( CCrossbowBoltSuper, DT_CrossbowBoltSuper )
 END_SEND_TABLE()
 
-CCrossbowBolt *CCrossbowBolt::BoltCreate( const Vector &vecOrigin, const QAngle &angAngles, int iDamage, CBasePlayer *pentOwner )
+CCrossbowBoltSuper *CCrossbowBoltSuper::BoltCreate( const Vector &vecOrigin, const QAngle &angAngles, int iDamage, CBasePlayer *pentOwner )
 {
-	// Create a new entity with CCrossbowBolt private data
-	CCrossbowBolt *pBolt = (CCrossbowBolt *)CreateEntityByName( "crossbow_bolt" );
+	// Create a new entity with CCrossbowBoltSuper private data
+	CCrossbowBoltSuper *pBolt = (CCrossbowBoltSuper *)CreateEntityByName( "crossbow_bolt" );
 	UTIL_SetOrigin( pBolt, vecOrigin );
 	pBolt->SetAbsAngles( angAngles );
 	pBolt->Spawn();
@@ -106,7 +106,7 @@ CCrossbowBolt *CCrossbowBolt::BoltCreate( const Vector &vecOrigin, const QAngle 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-CCrossbowBolt::~CCrossbowBolt( void )
+CCrossbowBoltSuper::~CCrossbowBoltSuper( void )
 {
 	if ( m_pGlowSprite )
 	{
@@ -118,7 +118,7 @@ CCrossbowBolt::~CCrossbowBolt( void )
 // Purpose: 
 // Output : Returns true on success, false on failure.
 //-----------------------------------------------------------------------------
-bool CCrossbowBolt::CreateVPhysics( void )
+bool CCrossbowBoltSuper::CreateVPhysics( void )
 {
 	// Create the object in the physics system
 	VPhysicsInitNormal( SOLID_BBOX, FSOLID_NOT_STANDABLE, false );
@@ -128,7 +128,7 @@ bool CCrossbowBolt::CreateVPhysics( void )
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
-unsigned int CCrossbowBolt::PhysicsSolidMaskForEntity() const
+unsigned int CCrossbowBoltSuper::PhysicsSolidMaskForEntity() const
 {
 	return ( BaseClass::PhysicsSolidMaskForEntity() | CONTENTS_HITBOX ) & ~CONTENTS_GRATE;
 }
@@ -137,7 +137,7 @@ unsigned int CCrossbowBolt::PhysicsSolidMaskForEntity() const
 // Purpose: 
 // Output : Returns true on success, false on failure.
 //-----------------------------------------------------------------------------
-bool CCrossbowBolt::CreateSprites( void )
+bool CCrossbowBoltSuper::CreateSprites( void )
 {
 	// Start up the eye glow
 	m_pGlowSprite = CSprite::SpriteCreate( "sprites/light_glow02_noz.vmt", GetLocalOrigin(), false );
@@ -156,7 +156,7 @@ bool CCrossbowBolt::CreateSprites( void )
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CCrossbowBolt::Spawn( void )
+void CCrossbowBoltSuper::Spawn( void )
 {
 	Precache( );
 
@@ -169,9 +169,9 @@ void CCrossbowBolt::Spawn( void )
 	// Make sure we're updated if we're underwater
 	UpdateWaterState();
 
-	SetTouch( &CCrossbowBolt::BoltTouch );
+	SetTouch( &CCrossbowBoltSuper::BoltTouch );
 
-	SetThink( &CCrossbowBolt::BubbleThink );
+	SetThink( &CCrossbowBoltSuper::BubbleThink );
 	SetNextThink( gpGlobals->curtime + 0.1f );
 	
 	CreateSprites();
@@ -181,7 +181,7 @@ void CCrossbowBolt::Spawn( void )
 }
 
 
-void CCrossbowBolt::Precache( void )
+void CCrossbowBoltSuper::Precache( void )
 {
 	PrecacheModel( BOLT_MODEL );
 
@@ -195,7 +195,7 @@ void CCrossbowBolt::Precache( void )
 // Purpose: 
 // Input  : *pOther - 
 //-----------------------------------------------------------------------------
-void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
+void CCrossbowBoltSuper::BoltTouch( CBaseEntity *pOther )
 {
 	if ( !pOther->IsSolid() || pOther->IsSolidFlagSet(FSOLID_VOLUME_CONTENTS) )
 		return;
@@ -299,7 +299,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 			}
 			else
 			{
-				SetThink( &CCrossbowBolt::SUB_Remove );
+				SetThink( &CCrossbowBoltSuper::SUB_Remove );
 				SetNextThink( gpGlobals->curtime + 2.0f );
 				
 				//FIXME: We actually want to stick (with hierarchy) to what we've hit
@@ -322,7 +322,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 
 				AddEffects( EF_NODRAW );
 				SetTouch( NULL );
-				SetThink( &CCrossbowBolt::SUB_Remove );
+				SetThink( &CCrossbowBoltSuper::SUB_Remove );
 				SetNextThink( gpGlobals->curtime + 2.0f );
 
 				if ( m_pGlowSprite != NULL )
@@ -352,7 +352,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 
 	if ( g_pGameRules->IsMultiplayer() )
 	{
-//		SetThink( &CCrossbowBolt::ExplodeThink );
+//		SetThink( &CCrossbowBoltSuper::ExplodeThink );
 //		SetNextThink( gpGlobals->curtime + 0.1f );
 	}
 }
@@ -360,7 +360,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CCrossbowBolt::BubbleThink( void )
+void CCrossbowBoltSuper::BubbleThink( void )
 {
 	QAngle angNewAngles;
 
@@ -378,13 +378,13 @@ void CCrossbowBolt::BubbleThink( void )
 #endif
 
 #ifdef CLIENT_DLL
-#define CWeaponNailgun C_WeaponNailgun
+#define CWeaponNailgunsuper C_WeaponNailgunsuper
 #endif
 
-class CWeaponNailgun : public CBaseHL2MPCombatWeapon
+class CWeaponNailgunsuper : public CBaseHL2MPCombatWeapon
 {
 public:
-	DECLARE_CLASS( CWeaponNailgun, CBaseHL2MPCombatWeapon );
+	DECLARE_CLASS( CWeaponNailgunsuper, CBaseHL2MPCombatWeapon );
 
 //#ifndef CLIENT_DLL
 //	virtual void Operator_HandleAnimEvent( animevent_t *pEvent, CBaseCombatCharacter *pOperator );
@@ -408,33 +408,33 @@ public:
 	void ItemPostFrame( void );
 	void DryFire( void );
 
-	CWeaponNailgun(void);
+	CWeaponNailgunsuper(void);
 
 private:
-	CWeaponNailgun( const CWeaponNailgun & );
+	CWeaponNailgunsuper( const CWeaponNailgunsuper & );
 };
 
-IMPLEMENT_NETWORKCLASS_ALIASED( WeaponNailgun, DT_WeaponNailgun )
+IMPLEMENT_NETWORKCLASS_ALIASED( WeaponNailgunsuper, DT_WeaponNailgunsuper )
 
-BEGIN_NETWORK_TABLE( CWeaponNailgun, DT_WeaponNailgun )
+BEGIN_NETWORK_TABLE( CWeaponNailgunsuper, DT_WeaponNailgunsuper )
 END_NETWORK_TABLE()
 
 #ifdef CLIENT_DLL
-BEGIN_PREDICTION_DATA( CWeaponNailgun )
+BEGIN_PREDICTION_DATA( CWeaponNailgunsuper )
 END_PREDICTION_DATA()
 #endif
 
-LINK_ENTITY_TO_CLASS( weapon_nailgun, CWeaponNailgun );
-PRECACHE_WEAPON_REGISTER(weapon_nailgun);
+LINK_ENTITY_TO_CLASS( weapon_nailgunsuper, CWeaponNailgunsuper );
+PRECACHE_WEAPON_REGISTER(weapon_nailgunsuper);
 
-CWeaponNailgun::CWeaponNailgun( void )
+CWeaponNailgunsuper::CWeaponNailgunsuper( void )
 {
 }
 
 #define	CROSSBOW_GLOW_SPRITE	"sprites/light_glow02_noz.vmt"
 #define	CROSSBOW_GLOW_SPRITE2	"sprites/blueflare1.vmt"
 
-void CWeaponNailgun::Precache( void )
+void CWeaponNailgunsuper::Precache( void )
 {
 #ifndef CLIENT_DLL
 	UTIL_PrecacheOther( "crossbow_bolt" );
@@ -450,7 +450,7 @@ void CWeaponNailgun::Precache( void )
 	BaseClass::Precache();
 }
 
-void CWeaponNailgun::PrimaryAttack( void )
+void CWeaponNailgunsuper::PrimaryAttack( void )
 {
 	CBasePlayer *pOwner = ToBasePlayer( GetOwner() );
 	
@@ -464,7 +464,7 @@ void CWeaponNailgun::PrimaryAttack( void )
 	QAngle angAiming;
 	VectorAngles( vecAiming, angAiming );
 
-	CCrossbowBolt *pBolt = CCrossbowBolt::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
+	CCrossbowBoltSuper *pBolt = CCrossbowBoltSuper::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
 
 	if ( pOwner->GetWaterLevel() == 3 )
 	{
@@ -480,11 +480,11 @@ void CWeaponNailgun::PrimaryAttack( void )
 	GetOwner()->RemoveAmmo( 1, GetPrimaryAmmoType() );
 	WeaponSound( SINGLE );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.6f;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.6f;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.3f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.3f;
 }
 
-void CWeaponNailgun::DryFire( void )
+void CWeaponNailgunsuper::DryFire( void )
 {
 	WeaponSound(EMPTY);
 	SendWeaponAnim( ACT_VM_DRYFIRE );
@@ -492,7 +492,7 @@ void CWeaponNailgun::DryFire( void )
 	m_flNextPrimaryAttack = gpGlobals->curtime + 1;
 }
 
-void CWeaponNailgun::ItemPostFrame( void )
+void CWeaponNailgunsuper::ItemPostFrame( void )
 {
 	CBasePlayer *pOwner = ToBasePlayer( GetOwner() );
 	if (!pOwner)
@@ -529,7 +529,7 @@ void CWeaponNailgun::ItemPostFrame( void )
 
 }
 
-void CWeaponNailgun::ItemHolsterFrame( void )
+void CWeaponNailgunsuper::ItemHolsterFrame( void )
 {
 	// Must be player held
 	if ( GetOwner() && GetOwner()->IsPlayer() == false )
