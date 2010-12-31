@@ -477,11 +477,14 @@ void CWeaponNailgun::PrimaryAttack( void )
 
 #endif
 
+	QAngle punch;
+	punch.Init( SharedRandomFloat( "nailgunpax", -0.5, 0), SharedRandomFloat( "nailgunpay", -0.5, 0.5), 0);
+	pOwner->ViewPunch( punch );
 	GetOwner()->RemoveAmmo( 1, GetPrimaryAmmoType() );
 	WeaponSound( SINGLE );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.1f;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.1f;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.111f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.111f;
 }
 
 void CWeaponNailgun::DryFire( void )
