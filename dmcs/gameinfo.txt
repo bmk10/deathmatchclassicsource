@@ -1,6 +1,6 @@
 "GameInfo"
 {
-	game		"Deathmatch Classic: Source Beta 1.21"
+	game		"Deathmatch Classic: Source Beta 1.23"
 	title		"Deathmatch Classic"
 	title2		"Source Beta 1.21"
 	type 		multiplayer_only
