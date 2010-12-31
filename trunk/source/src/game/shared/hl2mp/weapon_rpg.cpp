@@ -402,8 +402,8 @@ void CMissile::IgniteThink( void )
 	{
 		CBasePlayer *pPlayer = ToBasePlayer( m_hOwner->GetOwner() );
 
-		color32 white = { 255,225,205,64 };
-		UTIL_ScreenFade( pPlayer, white, 0.1f, 0.0f, FFADE_IN );
+	//	color32 white = { 255,225,205,64 };
+	//	UTIL_ScreenFade( pPlayer, white, 0.1f, 0.0f, FFADE_IN );
 	}
 
 	CreateSmokeTrail();
@@ -695,7 +695,7 @@ void CWeaponRPG::PrimaryAttack( void )
 	Vector vecOrigin;
 	Vector vecForward;
 
-	m_flNextPrimaryAttack = gpGlobals->curtime + 0.5f;
+	m_flNextPrimaryAttack = gpGlobals->curtime + 1.2f;
 
 	CBasePlayer *pOwner = ToBasePlayer( GetOwner() );
 	
