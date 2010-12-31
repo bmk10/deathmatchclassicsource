@@ -930,7 +930,7 @@ CAmmoDef *GetAmmoDef()
 
 		def.AddAmmoType("XBowBolt",			DMG_BULLET,					TRACER_LINE,			5,			5,			200,			BULLET_IMPULSE(800, 8000),	0 );
 		def.AddAmmoType("Buckshot",			DMG_BULLET | DMG_BUCKSHOT,	TRACER_LINE,			3,			3,			100,			BULLET_IMPULSE(400, 1200),	0 );
-		def.AddAmmoType("RPG_Round",		DMG_BURN,					TRACER_NONE,			0,			0,			100,			0,							0 );
+		def.AddAmmoType("RPG_Round",		DMG_BURN,					TRACER_NONE,			0,			0,			10,			0,							0 );
 		def.AddAmmoType("Cells",		    DMG_DISSOLVE,				TRACER_LINE,			0,			0,			200,			0,							0 );
 	}
 

@@ -248,7 +248,7 @@ void CHL2MP_Player::GiveDefaultItems( void )
 //	CBasePlayer::GiveAmmo( 1,	"grenade" );
 	CBasePlayer::GiveAmmo( 100,	"Buckshot");
 //	CBasePlayer::GiveAmmo( 6,	"357" );
-	CBasePlayer::GiveAmmo( 50,	"rpg_round");
+	CBasePlayer::GiveAmmo( 10,	"rpg_round");
 	CBasePlayer::GiveAmmo( 200, "XBowBolt" );
 	CBasePlayer::GiveAmmo( 200, "Cells");
 
