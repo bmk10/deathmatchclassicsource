@@ -81,8 +81,8 @@ void CWeaponShotgundouble::Pump( void )
 	// Finish reload animation
 	SendWeaponAnim( ACT_SHOTGUN_PUMP );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 1;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 1;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 2;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 2;
 }
 void CWeaponShotgundouble::PrimaryAttack( void )
 {
