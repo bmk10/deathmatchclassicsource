@@ -3,7 +3,7 @@
 // Purpose: 
 //
 // $NoKeywords: $
-//=============================================================================//
+//============================================================================//
 
 #ifndef WEAPON_RPG_H
 #define WEAPON_RPG_H
@@ -26,7 +26,7 @@
 #include "beam_shared.h"
 
 class CWeaponRPG;
-class CLaserDot;
+//class CLaserDot;
 class RocketTrail;
  
 //###########################################################################
@@ -54,12 +54,12 @@ public:
 	void	AccelerateThink( void );
 	void	AugerThink( void );
 	void	IgniteThink( void );
-	void	SeekThink( void );
+//	void	SeekThink( void );
 	void	DumbFire( void );
 	void	SetGracePeriod( float flGracePeriod );
 
 	int		OnTakeDamage_Alive( const CTakeDamageInfo &info );
-	void	Event_Killed( const CTakeDamageInfo &info );
+//	void	Event_Killed( const CTakeDamageInfo &info );
 	
 	virtual float	GetDamage() { return m_flDamage; }
 	virtual void	SetDamage(float flDamage) { m_flDamage = flDamage; }
@@ -72,14 +72,14 @@ public:
 
 protected:
 	virtual void DoExplosion();	
-	virtual void ComputeActualDotPosition( CLaserDot *pLaserDot, Vector *pActualDotPosition, float *pHomingSpeed );
+//	virtual void ComputeActualDotPosition( CLaserDot *pLaserDot, Vector *pActualDotPosition, float *pHomingSpeed );
 	virtual int AugerHealth() { return m_iMaxHealth - 20; }
 
 	// Creates the smoke trail
 	void CreateSmokeTrail( void );
 
 	// Gets the shooting position 
-	void GetShootPosition( CLaserDot *pLaserDot, Vector *pShootPosition );
+//	void GetShootPosition( CLaserDot *pLaserDot, Vector *pShootPosition );
 
 	CHandle<RocketTrail>	m_hRocketTrail;
 	float					m_flAugerTime;		// Amount of time to auger before blowing up anyway
@@ -92,7 +92,7 @@ private:
 	DECLARE_DATADESC();
 };
 
-
+/*
 //-----------------------------------------------------------------------------
 // Laser dot control
 //-----------------------------------------------------------------------------
@@ -153,6 +153,7 @@ private:
 // Finds apc missiles in cone
 //-----------------------------------------------------------------------------
 CAPCMissile *FindAPCMissileInCone( const Vector &vecOrigin, const Vector &vecDirection, float flAngle );
+*/
 
 #endif
 
@@ -181,67 +182,67 @@ public:
 	virtual float GetFireRate( void ) { return 1; };
 	void	ItemPostFrame( void );
 
-	void	Activate( void );
+//	void	Activate( void );
 	void	DecrementAmmo( CBaseCombatCharacter *pOwner );
 
 	bool	Deploy( void );
-	bool	Holster( CBaseCombatWeapon *pSwitchingTo = NULL );
-	bool	Reload( void );
-	bool	WeaponShouldBeLowered( void );
-	bool	Lower( void );
+//	bool	Holster( CBaseCombatWeapon *pSwitchingTo = NULL );
+//	bool	Reload( void );
+//	bool	WeaponShouldBeLowered( void );
+//	bool	Lower( void );
 
-	bool	CanHolster( void );
+//	bool	CanHolster( void );
 
-	virtual void Drop( const Vector &vecVelocity );
+//	virtual void Drop( const Vector &vecVelocity );
 
 	int		GetMinBurst() { return 1; }
 	int		GetMaxBurst() { return 1; }
 	float	GetMinRestTime() { return 4.0; }
 	float	GetMaxRestTime() { return 4.0; }
 
-	void	StartGuiding( void );
-	void	StopGuiding( void );
-	void	ToggleGuiding( void );
-	bool	IsGuiding( void );
+//	void	StartGuiding( void );
+//	void	StopGuiding( void );
+//	void	ToggleGuiding( void );
+//	bool	IsGuiding( void );
 
 	void	NotifyRocketDied( void );
 
 	bool	HasAnyAmmo( void );
 
-	void	SuppressGuiding( bool state = true );
+//	void	SuppressGuiding( bool state = true );
 
-	void	CreateLaserPointer( void );
-	void	UpdateLaserPosition( Vector vecMuzzlePos = vec3_origin, Vector vecEndPos = vec3_origin );
-	Vector	GetLaserPosition( void );
+//	void	CreateLaserPointer( void );
+//	void	UpdateLaserPosition( Vector vecMuzzlePos = vec3_origin, Vector vecEndPos = vec3_origin );
+//	Vector	GetLaserPosition( void );
 
 	// NPC RPG users cheat and directly set the laser pointer's origin
-	void	UpdateNPCLaserPosition( const Vector &vecTarget );
-	void	SetNPCLaserPosition( const Vector &vecTarget );
-	const Vector &GetNPCLaserPosition( void );
+//	void	UpdateNPCLaserPosition( const Vector &vecTarget );
+//	void	SetNPCLaserPosition( const Vector &vecTarget );
+//	const Vector &GetNPCLaserPosition( void );
 	
-#ifdef CLIENT_DLL
+//#ifdef CLIENT_DLL
 
 	// We need to render opaque and translucent pieces
-	virtual RenderGroup_t	GetRenderGroup( void ) {	return RENDER_GROUP_TWOPASS;	}
+//	virtual RenderGroup_t	GetRenderGroup( void ) {	return RENDER_GROUP_TWOPASS;	}
 
-	virtual void	NotifyShouldTransmit( ShouldTransmitState_t state );
-	virtual int		DrawModel( int flags );
-	virtual void	ViewModelDrawn( C_BaseViewModel *pBaseViewModel );
-	virtual bool	IsTranslucent( void );
+//	virtual void	NotifyShouldTransmit( ShouldTransmitState_t state );
+//	virtual int		DrawModel( int flags );
+//	virtual void	ViewModelDrawn( C_BaseViewModel *pBaseViewModel );
+//	virtual bool	IsTranslucent( void );
 
-	void			InitBeam( void );
-	void			GetWeaponAttachment( int attachmentId, Vector &outVector, Vector *dir = NULL );
-	void			DrawEffects( void );
+//	void			InitBeam( void );
+//	void			GetWeaponAttachment( int attachmentId, Vector &outVector, Vector *dir = NULL );
+//	void			DrawEffects( void );
 //	void			DrawLaserDot( void );
 
-	CMaterialReference	m_hSpriteMaterial;	// Used for the laser glint
-	CMaterialReference	m_hBeamMaterial;	// Used for the laser beam
-	Beam_t				*m_pBeam;			// Laser beam temp entity
+//	CMaterialReference	m_hSpriteMaterial;	// Used for the laser glint
+//	CMaterialReference	m_hBeamMaterial;	// Used for the laser beam
+//	Beam_t				*m_pBeam;			// Laser beam temp entity
 
 	//Tony; third person check thing, to destroy/reinitialize the beam ( swapping first -> third or back, etc )
-	virtual void			ThirdPersonSwitch( bool bThirdPerson );
+//	virtual void			ThirdPersonSwitch( bool bThirdPerson );
 
-#endif	//CLIENT_DLL
+//#endif	//CLIENT_DLL
 
 	CBaseEntity *GetMissile( void ) { return m_hMissile; }
 
@@ -257,7 +258,7 @@ protected:
 	CNetworkVar(	Vector,			m_vecLaserDot );
 
 #ifndef CLIENT_DLL
-	CHandle<CLaserDot>	m_hLaserDot;
+//	CHandle<CLaserDot>	m_hLaserDot;
 #endif
 
 private:
