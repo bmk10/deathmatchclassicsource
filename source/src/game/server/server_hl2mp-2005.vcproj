@@ -3504,10 +3504,6 @@
 				Name="HL2 DLL"
 				>
 				<File
-					RelativePath=".\hl2\ai_allymanager.cpp"
-					>
-				</File>
-				<File
 					RelativePath=".\hl2\ai_behavior_actbusy.cpp"
 					>
 				</File>
@@ -3516,27 +3512,11 @@
 					>
 				</File>
 				<File
-					RelativePath=".\hl2\ai_behavior_functank.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\ai_behavior_functank.h"
-					>
-				</File>
-				<File
 					RelativePath=".\hl2\ai_behavior_holster.cpp"
 					>
 				</File>
 				<File
 					RelativePath=".\hl2\ai_behavior_holster.h"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\ai_behavior_police.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\ai_behavior_police.h"
 					>
 				</File>
 				<File
@@ -3673,14 +3653,6 @@
 				</File>
 				<File
 					RelativePath=".\hl2\func_recharge.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\func_tank.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\func_tank.h"
 					>
 				</File>
 				<File
@@ -3832,10 +3804,6 @@
 					>
 				</File>
 				<File
-					RelativePath=".\hl2\npc_apcdriver.cpp"
-					>
-				</File>
-				<File
 					RelativePath=".\hl2\npc_attackchopper.cpp"
 					>
 				</File>
@@ -3849,10 +3817,6 @@
 				</File>
 				<File
 					RelativePath=".\hl2\npc_barnacle.h"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_barney.cpp"
 					>
 				</File>
 				<File
@@ -3884,39 +3848,11 @@
 					>
 				</File>
 				<File
-					RelativePath=".\hl2\npc_citizen17.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_citizen17.h"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_combine.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_combine.h"
-					>
-				</File>
-				<File
 					RelativePath=".\hl2\npc_combinecamera.cpp"
 					>
 				</File>
 				<File
 					RelativePath=".\hl2\npc_combinedropship.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_combinegunship.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_combines.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_combines.h"
 					>
 				</File>
 				<File
@@ -3969,22 +3905,6 @@
 				</File>
 				<File
 					RelativePath=".\hl2\npc_launcher.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_manhack.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_manhack.h"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_metropolice.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\npc_metropolice.h"
 					>
 				</File>
 				<File
@@ -4048,10 +3968,6 @@
 					>
 				</File>
 				<File
-					RelativePath=".\hl2\npc_turret_floor.cpp"
-					>
-				</File>
-				<File
 					RelativePath=".\hl2\npc_turret_ground.cpp"
 					>
 				</File>
@@ -4105,14 +4021,6 @@
 				</File>
 				<File
 					RelativePath="..\shared\script_intro_shared.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\vehicle_airboat.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\hl2\vehicle_apc.h"
 					>
 				</File>
 				<File
