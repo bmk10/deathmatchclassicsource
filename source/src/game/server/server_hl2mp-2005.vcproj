@@ -139,7 +139,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\..\..\..\dmcsource\bin"
+			OutputDirectory="..\..\..\..\dmcs\bin"
 			IntermediateDirectory="..\..\..\..\..\..\..\..\Users\Admin\Desktop\objectsblah\serverlawl"
 			ConfigurationType="2"
 			CharacterSet="2"

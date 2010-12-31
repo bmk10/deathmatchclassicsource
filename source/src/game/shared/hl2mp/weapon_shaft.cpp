@@ -7,7 +7,7 @@
 	#define CWeapon_Shaft C_Weapon_Shaft
 #endif
 
-#define BEAM_DAMAGE		1.3f
+#define BEAM_DAMAGE		3
 #define DAMAGE_TICK		0.1f
 
 class CWeapon_Shaft : public CBaseHL2MPCombatWeapon
