@@ -14,7 +14,7 @@ WeaponData
 
 	"primary_ammo"		"XBowBolt"
 	"secondary_ammo"	"None"
-	"m_iPlayerDamage"	"5"
+	"damage"	"5"
 
 	"weight"		"3"
 	"item_flags"		"0"
