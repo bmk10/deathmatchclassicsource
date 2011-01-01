@@ -1,3 +1,2 @@
-dm_lockdown
-dm_steamlab
-dm_overwatch
+dmcs_jigsaw
+the_bad_place
