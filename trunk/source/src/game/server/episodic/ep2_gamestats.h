@@ -11,7 +11,7 @@
 #endif
 
 #include "ep1_gamestats.h"
-#include "tier1/UtlString.h"
+#include "tier1/utlstring.h"
 
 // EP2 Game Stats
 enum Ep2GameStatsVersions_t
