@@ -27,8 +27,8 @@
 //#define BOLT_MODEL			"models/crossbow_bolt.mdl"
 #define BOLT_MODEL	"models/weapons/w_missile_closed.mdl"
 
-#define BOLT_AIR_VELOCITY	1500
-#define BOLT_WATER_VELOCITY	1500
+#define BOLT_AIR_VELOCITY	2000
+#define BOLT_WATER_VELOCITY	2000
 #define	BOLT_SKIN_NORMAL	0
 #define BOLT_SKIN_GLOW		1
 
@@ -71,7 +71,7 @@ protected:
 	int		m_iDamage;
 
 	DECLARE_DATADESC();
-	DECLARE_SERVERCLASS();
+//	DECLARE_SERVERCLASS();
 };
 LINK_ENTITY_TO_CLASS( crossbow_bolt, CCrossbowBoltSuper );
 
@@ -86,8 +86,11 @@ BEGIN_DATADESC( CCrossbowBoltSuper )
 
 END_DATADESC()
 
-IMPLEMENT_SERVERCLASS_ST( CCrossbowBoltSuper, DT_CrossbowBoltSuper )
-END_SEND_TABLE()
+//IMPLEMENT_SERVERCLASS_ST( CCrossbowBoltSuper, DT_CrossbowBoltSuper )
+//END_SEND_TABLE()
+
+//BEGIN_NETWORK_TABLE( CCrossbowBoltSuper, DT_CrossbowBoltSuper )
+//END_NETWORK_TABLE()
 
 CCrossbowBoltSuper *CCrossbowBoltSuper::BoltCreate( const Vector &vecOrigin, const QAngle &angAngles, int iDamage, CBasePlayer *pentOwner )
 {
@@ -408,6 +411,8 @@ public:
 	void ItemPostFrame( void );
 	void DryFire( void );
 
+	DECLARE_ACTTABLE();
+
 	CWeaponNailgunsuper(void);
 
 private:
@@ -426,6 +431,25 @@ END_PREDICTION_DATA()
 
 LINK_ENTITY_TO_CLASS( weapon_nailgunsuper, CWeaponNailgunsuper );
 PRECACHE_WEAPON_REGISTER(weapon_nailgunsuper);
+
+acttable_t	CWeaponNailgunsuper::m_acttable[] = 
+{
+	{ ACT_MP_STAND_IDLE,				ACT_HL2MP_IDLE_SMG1,					false },
+	{ ACT_MP_CROUCH_IDLE,				ACT_HL2MP_IDLE_CROUCH_SMG1,				false },
+
+	{ ACT_MP_RUN,						ACT_HL2MP_RUN_SMG1,						false },
+	{ ACT_MP_CROUCHWALK,				ACT_HL2MP_WALK_CROUCH_SMG1,				false },
+
+	{ ACT_MP_ATTACK_STAND_PRIMARYFIRE,	ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1,	false },
+	{ ACT_MP_ATTACK_CROUCH_PRIMARYFIRE,	ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1,	false },
+
+	{ ACT_MP_RELOAD_STAND,				ACT_HL2MP_GESTURE_RELOAD_SMG1,			false },
+	{ ACT_MP_RELOAD_CROUCH,				ACT_HL2MP_GESTURE_RELOAD_SMG1,			false },
+
+	{ ACT_MP_JUMP,						ACT_HL2MP_JUMP_SMG1,					false },
+};
+
+IMPLEMENT_ACTTABLE(CWeaponNailgunsuper);
 
 CWeaponNailgunsuper::CWeaponNailgunsuper( void )
 {
@@ -477,11 +501,14 @@ void CWeaponNailgunsuper::PrimaryAttack( void )
 
 #endif
 
+	QAngle punch;
+	punch.Init( SharedRandomFloat( "nailgunpax", -0.5, 0), SharedRandomFloat( "nailgunpay", -0.5, 0.5), 0);
+	pOwner->ViewPunch( punch );
 	GetOwner()->RemoveAmmo( 1, GetPrimaryAmmoType() );
 	WeaponSound( SINGLE );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.3f;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.3f;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.1f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.1f;
 }
 
 void CWeaponNailgunsuper::DryFire( void )

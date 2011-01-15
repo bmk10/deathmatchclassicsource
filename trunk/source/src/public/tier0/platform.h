@@ -43,7 +43,7 @@
 #endif // _LINUX
 
 #include <malloc.h>
-// #include <new.h>
+#include <new.h>
 
 
 // need this for memset
