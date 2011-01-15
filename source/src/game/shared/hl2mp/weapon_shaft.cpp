@@ -7,7 +7,7 @@
 	#define CWeapon_Shaft C_Weapon_Shaft
 #endif
 
-#define BEAM_DAMAGE		3
+#define BEAM_DAMAGE		5
 #define DAMAGE_TICK		0.1f
 
 class CWeapon_Shaft : public CBaseHL2MPCombatWeapon
@@ -31,6 +31,8 @@ public:
 		BaseClass::Precache();
 	}
 #endif
+
+	DECLARE_ACTTABLE();
 
 	bool Holster( CBaseCombatWeapon* pSwitchingTo )
 	{
@@ -152,6 +154,25 @@ LINK_ENTITY_TO_CLASS( weapon_shaft, CWeapon_Shaft );
 
 IMPLEMENT_NETWORKCLASS_ALIASED( Weapon_Shaft, DT_Weapon_Shaft );
 PRECACHE_WEAPON_REGISTER( weapon_shaft );
+
+acttable_t	CWeapon_Shaft::m_acttable[] = 
+{
+	{ ACT_MP_STAND_IDLE,				ACT_HL2MP_IDLE_AR2,					false },
+	{ ACT_MP_CROUCH_IDLE,				ACT_HL2MP_IDLE_CROUCH_AR2,			false },
+
+	{ ACT_MP_RUN,						ACT_HL2MP_RUN_AR2,					false },
+	{ ACT_MP_CROUCHWALK,				ACT_HL2MP_WALK_CROUCH_AR2,			false },
+
+	{ ACT_MP_ATTACK_STAND_PRIMARYFIRE,	ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2,	false },
+	{ ACT_MP_ATTACK_CROUCH_PRIMARYFIRE,	ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2,	false },
+
+	{ ACT_MP_RELOAD_STAND,				ACT_HL2MP_GESTURE_RELOAD_AR2,		false },
+	{ ACT_MP_RELOAD_CROUCH,				ACT_HL2MP_GESTURE_RELOAD_AR2,		false },
+
+	{ ACT_MP_JUMP,						ACT_HL2MP_JUMP_AR2,					false },
+};
+
+IMPLEMENT_ACTTABLE(CWeapon_Shaft);
 
 BEGIN_DATADESC( CWeapon_Shaft )
 	DEFINE_FIELD( m_hBeam, FIELD_EHANDLE ),

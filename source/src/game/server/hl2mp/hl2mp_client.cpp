@@ -73,7 +73,7 @@ void FinishClientPutInServer( CHL2MP_Player *pPlayer )
 
 	data->deleteThis();
 
-	UTIL_ClientPrintAll( HUD_PRINTCENTER, "Welcome To James MotherFucking Kane\n" );
+	UTIL_ClientPrintAll( HUD_PRINTCENTER, "Welcome to DMC:S\n" );
 }
 
 /*

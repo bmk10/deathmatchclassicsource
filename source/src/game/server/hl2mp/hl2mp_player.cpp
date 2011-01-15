@@ -229,7 +229,7 @@ void CHL2MP_Player::GiveAllItems( void )
 	GiveNamedItem( "weapon_shaft" );
 //	GiveNamedItem( "weapon_frag" );
 	GiveNamedItem( "weapon_nailgun" );
-//	GiveNamedItem( "weapon_nailgunsuper" );
+	GiveNamedItem( "weapon_nailgunsuper" );
 	
 //	GiveNamedItem( "weapon_crossbow" );
 	
@@ -256,9 +256,10 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	GiveNamedItem( "weapon_crowbar" );
 	GiveNamedItem( "weapon_shotgun" );
 	GiveNamedItem( "weapon_shotgundouble" );
-	GiveNamedItem( "weapon_shaft" );
+//	GiveNamedItem( "weapon_shaft" );
 	GiveNamedItem( "weapon_rpg" );
 	GiveNamedItem( "weapon_nailgun" );
+	GiveNamedItem( "weapon_nailgunsuper" );
 //	GiveNamedItem( "weapon_pistol" );
 //	GiveNamedItem( "weapon_smg1" );
 //	GiveNamedItem( "weapon_frag" );

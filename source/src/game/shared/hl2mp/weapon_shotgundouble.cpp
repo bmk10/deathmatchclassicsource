@@ -46,7 +46,10 @@ public:
 	void ItemPostFrame( void );
 	void PrimaryAttack( void );
 	void DryFire( void );
+	bool Deploy( void );
 	virtual float GetFireRate( void ) { return 0.1; };
+
+	DECLARE_ACTTABLE();
 
 	CWeaponShotgundouble(void);
 
@@ -67,6 +70,25 @@ END_PREDICTION_DATA()
 LINK_ENTITY_TO_CLASS( weapon_shotgundouble, CWeaponShotgundouble );
 PRECACHE_WEAPON_REGISTER(weapon_shotgundouble);
 
+acttable_t	CWeaponShotgundouble::m_acttable[] = 
+{
+	{ ACT_MP_STAND_IDLE,				ACT_HL2MP_IDLE_SHOTGUN,					false },
+	{ ACT_MP_CROUCH_IDLE,				ACT_HL2MP_IDLE_CROUCH_SHOTGUN,			false },
+
+	{ ACT_MP_RUN,						ACT_HL2MP_RUN_SHOTGUN,					false },
+	{ ACT_MP_CROUCHWALK,				ACT_HL2MP_WALK_CROUCH_SHOTGUN,			false },
+
+	{ ACT_MP_ATTACK_STAND_PRIMARYFIRE,	ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN,	false },
+	{ ACT_MP_ATTACK_CROUCH_PRIMARYFIRE,	ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN,	false },
+
+	{ ACT_MP_RELOAD_STAND,				ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,		false },
+	{ ACT_MP_RELOAD_CROUCH,				ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,		false },
+
+	{ ACT_MP_JUMP,						ACT_HL2MP_JUMP_SHOTGUN,					false },
+};
+
+IMPLEMENT_ACTTABLE(CWeaponShotgundouble);
+
 void CWeaponShotgundouble::Pump( void )
 {
 	CBaseCombatCharacter *pOwner = GetOwner();
@@ -81,8 +103,8 @@ void CWeaponShotgundouble::Pump( void )
 	// Finish reload animation
 	SendWeaponAnim( ACT_SHOTGUN_PUMP );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 2;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 2;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 1.5f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 1.5f;
 }
 void CWeaponShotgundouble::PrimaryAttack( void )
 {
@@ -94,6 +116,7 @@ void CWeaponShotgundouble::PrimaryAttack( void )
 		return;
 	}
 
+	Pump();
 	// MUST call sound before removing a round from the clip of a CMachineGun
 	WeaponSound(SINGLE);
 
@@ -124,6 +147,16 @@ void CWeaponShotgundouble::PrimaryAttack( void )
 	pPlayer->ViewPunch( punch );
 
 	m_bNeedPump = true;
+}
+
+bool CWeaponShotgundouble::Deploy( void )
+{
+	CHL2MP_Player *pPlayer = assert_cast<CHL2MP_Player*>( GetOwner() );
+	DefaultDeploy( (char*)GetViewModel(), (char*)GetWorldModel(), ACT_VM_IDLE_LOWERED, (char*)GetAnimPrefix() );
+	pPlayer->SetNextAttack( gpGlobals->curtime + 1.0 );
+	m_flNextPrimaryAttack = gpGlobals->curtime + 1.0;
+
+	return true;
 }
 
 void CWeaponShotgundouble::ItemPostFrame( void )
