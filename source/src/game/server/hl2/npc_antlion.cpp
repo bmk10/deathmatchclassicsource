@@ -1161,19 +1161,19 @@ void CNPC_Antlion::HandleAnimEvent( animevent_t *pEvent )
 
 	if ( pEvent->event == AE_ANTLION_MELEE_HIT1 )
 	{
-		MeleeAttack( ANTLION_MELEE1_RANGE, sk_antlion_swipe_damage.GetFloat(), QAngle( 20.0f, 0.0f, -12.0f ), Vector( -250.0f, 1.0f, 1.0f ) );
+		//MeleeAttack( ANTLION_MELEE1_RANGE, sk_antlion_swipe_damage.GetFloat(), QAngle( 20.0f, 0.0f, -12.0f ), Vector( -250.0f, 1.0f, 1.0f ) );
 		return;
 	}
 
 	if ( pEvent->event == AE_ANTLION_MELEE_HIT2 )
 	{
-		MeleeAttack( ANTLION_MELEE1_RANGE, sk_antlion_swipe_damage.GetFloat(), QAngle( 20.0f, 0.0f, 0.0f ), Vector( -350.0f, 1.0f, 1.0f ) );
+		//MeleeAttack( ANTLION_MELEE1_RANGE, sk_antlion_swipe_damage.GetFloat(), QAngle( 20.0f, 0.0f, 0.0f ), Vector( -350.0f, 1.0f, 1.0f ) );
 		return;
 	}
 
 	if ( pEvent->event == AE_ANTLION_MELEE_POUNCE )
 	{
-		MeleeAttack( ANTLION_MELEE2_RANGE, sk_antlion_swipe_damage.GetFloat(), QAngle( 4.0f, 0.0f, 0.0f ), Vector( -250.0f, 1.0f, 1.0f ) );
+		//MeleeAttack( ANTLION_MELEE2_RANGE, sk_antlion_swipe_damage.GetFloat(), QAngle( 4.0f, 0.0f, 0.0f ), Vector( -250.0f, 1.0f, 1.0f ) );
 		return;
 	}
 		
@@ -3346,7 +3346,7 @@ bool CNPC_Antlion::CheckLanding( void )
 				CBasePlayer *pPlayer = ToBasePlayer( GetEnemy() );
 
 				if ( pPlayer && pPlayer->IsInAVehicle() == false )
-					 MeleeAttack( ANTLION_MELEE1_RANGE, sk_antlion_swipe_damage.GetFloat(), QAngle( 4.0f, 0.0f, 0.0f ), Vector( -250.0f, 1.0f, 1.0f ) );
+					 //MeleeAttack( ANTLION_MELEE1_RANGE, sk_antlion_swipe_damage.GetFloat(), QAngle( 4.0f, 0.0f, 0.0f ), Vector( -250.0f, 1.0f, 1.0f ) );
 			}
 
 			SetAbsVelocity( GetAbsVelocity() * 0.33f );
