@@ -3345,7 +3345,7 @@ bool CNPC_Antlion::CheckLanding( void )
 			{
 				CBasePlayer *pPlayer = ToBasePlayer( GetEnemy() );
 
-				if ( pPlayer && pPlayer->IsInAVehicle() == false )
+				if ( pPlayer && pPlayer->IsInAVehicle() == false ) {}
 					 //MeleeAttack( ANTLION_MELEE1_RANGE, sk_antlion_swipe_damage.GetFloat(), QAngle( 4.0f, 0.0f, 0.0f ), Vector( -250.0f, 1.0f, 1.0f ) );
 			}
 
