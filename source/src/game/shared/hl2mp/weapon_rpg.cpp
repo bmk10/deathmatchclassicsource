@@ -695,7 +695,7 @@ void CWeaponRPG::PrimaryAttack( void )
 	Vector vecOrigin;
 	Vector vecForward;
 
-	m_flNextPrimaryAttack = gpGlobals->curtime + 1.2f;
+	m_flNextPrimaryAttack = gpGlobals->curtime + 1.0f;
 
 	CBasePlayer *pOwner = ToBasePlayer( GetOwner() );
 	
