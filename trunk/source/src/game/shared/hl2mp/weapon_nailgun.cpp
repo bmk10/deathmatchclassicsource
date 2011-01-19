@@ -484,6 +484,14 @@ void CWeaponNailgun::PrimaryAttack( void )
 
 	QAngle angAiming;
 	VectorAngles( vecAiming, angAiming );
+ 
+	float RandomAngle = (rand() % 360);
+	float RandMagnitudeX = ((rand() % 175) / 100.0);
+	float RandMagnitudeY = ((rand() % 175) / 100.0);
+	angAiming.x += (RandMagnitudeX)*cos(RandomAngle);
+	angAiming.y += (RandMagnitudeY)*sin(RandomAngle);
+ 
+	AngleVectors(angAiming, &vecAiming);
 
 	CCrossbowBolt *pBolt = CCrossbowBolt::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
 
@@ -499,7 +507,7 @@ void CWeaponNailgun::PrimaryAttack( void )
 #endif
 
 	QAngle punch;
-	punch.Init( SharedRandomFloat( "nailgunpax", -0.75, 0), SharedRandomFloat( "nailgunpay", -0.75, 0.75), 0);
+	punch.Init( SharedRandomFloat( "nailgunpax", -0.50, 0), SharedRandomFloat( "nailgunpay", -0.50, 0.50), 0);
 	pOwner->ViewPunch( punch );
 	GetOwner()->RemoveAmmo( 1, GetPrimaryAmmoType() );
 	WeaponSound( SINGLE );
