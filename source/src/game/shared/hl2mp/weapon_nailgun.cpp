@@ -395,7 +395,7 @@ public:
 
 	virtual const Vector& GetBulletSpread( void )
 	{
-		static Vector cone = VECTOR_CONE_5DEGREES;
+		static Vector cone = VECTOR_CONE_3DEGREES;
 		return cone;
 	}
 
@@ -485,13 +485,14 @@ void CWeaponNailgun::PrimaryAttack( void )
 	QAngle angAiming;
 	VectorAngles( vecAiming, angAiming );
  
-	float RandomAngle = (rand() % 360);
-	float RandMagnitudeX = ((rand() % 175) / 100.0);
-	float RandMagnitudeY = ((rand() % 175) / 100.0);
-	angAiming.x += (RandMagnitudeX)*cos(RandomAngle);
-	angAiming.y += (RandMagnitudeY)*sin(RandomAngle);
+	// useful code for later, but not now - Jethro
+	//float RandomAngle = (rand() % 360);
+	//float RandMagnitudeX = ((rand() % 175) / 100.0);
+	//float RandMagnitudeY = ((rand() % 175) / 100.0);
+	//angAiming.x += (RandMagnitudeX)*cos(RandomAngle);
+	//angAiming.y += (RandMagnitudeY)*sin(RandomAngle);
  
-	AngleVectors(angAiming, &vecAiming);
+	//AngleVectors(angAiming, &vecAiming);
 
 	CCrossbowBolt *pBolt = CCrossbowBolt::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
 
@@ -507,13 +508,13 @@ void CWeaponNailgun::PrimaryAttack( void )
 #endif
 
 	QAngle punch;
-	punch.Init( SharedRandomFloat( "nailgunpax", -0.50, 0), SharedRandomFloat( "nailgunpay", -0.50, 0.50), 0);
+	punch.Init( SharedRandomFloat( "nailgunpax", 0, 0.25), SharedRandomFloat( "nailgunpay", 0, 0), 0);
 	pOwner->ViewPunch( punch );
 	GetOwner()->RemoveAmmo( 1, GetPrimaryAmmoType() );
 	WeaponSound( SINGLE );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.2f;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.2f;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.1f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.1f;
 }
 
 void CWeaponNailgun::DryFire( void )

@@ -234,6 +234,7 @@ void CHL2MP_Player::GiveAllItems( void )
 //	GiveNamedItem( "weapon_crossbow" );
 	
 	GiveNamedItem( "weapon_rpg" );
+	GiveNamedItem( "weapon_grenadelauncher" );
 
 //	GiveNamedItem( "weapon_slam" );
 	
@@ -258,6 +259,7 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	GiveNamedItem( "weapon_shotgundouble" );
 //	GiveNamedItem( "weapon_shaft" );
 	GiveNamedItem( "weapon_rpg" );
+	GiveNamedItem( "weapon_grenadelauncher" );
 	GiveNamedItem( "weapon_nailgun" );
 	GiveNamedItem( "weapon_nailgunsuper" );
 //	GiveNamedItem( "weapon_pistol" );

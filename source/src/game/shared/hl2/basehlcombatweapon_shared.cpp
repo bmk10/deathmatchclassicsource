@@ -48,6 +48,7 @@ BEGIN_PREDICTION_DATA( CBaseHLCombatWeapon )
 END_PREDICTION_DATA()
 
 ConVar sk_auto_reload_time( "sk_auto_reload_time", "3", FCVAR_REPLICATED );
+ConVar sk_no_delay_time( "sk_no_delay_time", "1.5", FCVAR_REPLICATED );
 
 //-----------------------------------------------------------------------------
 // Purpose: 
