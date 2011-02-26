@@ -19,6 +19,7 @@
 
 extern ConVar sk_auto_reload_time;
 extern ConVar sk_plr_num_shotgun_pellets;
+extern ConVar sk_no_delay_time;
 
 class CWeaponShotgundouble : public CBaseHL2MPCombatWeapon
 {
@@ -30,11 +31,12 @@ public:
 
 private:
 	CNetworkVar( bool,	m_bNeedPump );
+	CNetworkVar( bool,  NeedDelay );
 
 public:
 	virtual const Vector& GetBulletSpread( void )
 	{
-		static Vector cone = VECTOR_CONE_15DEGREES;
+		static Vector cone = VECTOR_CONE_20DEGREES;
 		return cone;
 	}
 
@@ -103,8 +105,8 @@ void CWeaponShotgundouble::Pump( void )
 	// Finish reload animation
 	SendWeaponAnim( ACT_SHOTGUN_PUMP );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 1.5f;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 1.5f;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 1.2f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 1.2f;
 }
 void CWeaponShotgundouble::PrimaryAttack( void )
 {
@@ -136,14 +138,14 @@ void CWeaponShotgundouble::PrimaryAttack( void )
 	Vector	vecSrc		= pPlayer->Weapon_ShootPosition( );
 	Vector	vecAiming	= pPlayer->GetAutoaimVector( AUTOAIM_10DEGREES );	
 
-	FireBulletsInfo_t info( 21, vecSrc, vecAiming, GetBulletSpread(), MAX_TRACE_LENGTH, m_iPrimaryAmmoType );
+	FireBulletsInfo_t info( 12, vecSrc, vecAiming, GetBulletSpread(), MAX_TRACE_LENGTH, m_iPrimaryAmmoType );
 	info.m_pAttacker = pPlayer;
 
 	// Fire the bullets, and force the first shot to be perfectly accuracy
 	pPlayer->FireBullets( info );
 	
 	QAngle punch;
-	punch.Init( SharedRandomFloat( "shotgunpax", -5, 5 ), SharedRandomFloat( "shotgunpay", -5, 5 ), 0 );
+	punch.Init( SharedRandomFloat( "shotgunpax", -3, 3 ), SharedRandomFloat( "shotgunpay", -3, 3 ), 0 );
 	pPlayer->ViewPunch( punch );
 
 	m_bNeedPump = true;
@@ -153,10 +155,17 @@ bool CWeaponShotgundouble::Deploy( void )
 {
 	CHL2MP_Player *pPlayer = assert_cast<CHL2MP_Player*>( GetOwner() );
 	DefaultDeploy( (char*)GetViewModel(), (char*)GetWorldModel(), ACT_VM_IDLE_LOWERED, (char*)GetAnimPrefix() );
-	pPlayer->SetNextAttack( gpGlobals->curtime + 1.0 );
-	m_flNextPrimaryAttack = gpGlobals->curtime + 1.0;
-
-	return true;
+	if (NeedDelay = false)
+	{
+		pPlayer->SetNextAttack( gpGlobals->curtime);
+		m_flNextPrimaryAttack = gpGlobals->curtime;
+	}
+	else
+	{
+		pPlayer->SetNextAttack( gpGlobals->curtime + 0.6 );
+		m_flNextPrimaryAttack = gpGlobals->curtime + 0.6;
+	}
+		return true;
 }
 
 void CWeaponShotgundouble::ItemPostFrame( void )
@@ -200,6 +209,7 @@ CBasePlayer *pOwner = ToBasePlayer( GetOwner() );
 CWeaponShotgundouble::CWeaponShotgundouble( void )
 {
 	m_bNeedPump		= false;
+	NeedDelay = false;
 
 	m_fMinRange1		= 0.0;
 	m_fMaxRange1		= 500;
@@ -216,6 +226,12 @@ void CWeaponShotgundouble::ItemHolsterFrame( void )
 	// We can't be active
 	if ( GetOwner()->GetActiveWeapon() == this )
 		return;
+
+	// If it's been longer than one second, no delay
+	if ( ( gpGlobals->curtime - m_flHolsterTime ) > 1 )
+		NeedDelay = false;
+	else
+		NeedDelay = true;
 }
 
 void CWeaponShotgundouble::DryFire( void )

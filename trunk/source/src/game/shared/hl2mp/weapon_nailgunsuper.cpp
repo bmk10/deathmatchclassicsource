@@ -508,9 +508,9 @@ void CWeaponNailgunsuper::PrimaryAttack( void )
 #endif
 
 	QAngle punch;
-	punch.Init( SharedRandomFloat( "nailgunpax", -0.25, 0), SharedRandomFloat( "nailgunpay", -0.25, 0.25), 0);
+	punch.Init( SharedRandomFloat( "nailgunpax", 0, 0.25), SharedRandomFloat( "nailgunpay", 0, 0), 0);
 	pOwner->ViewPunch( punch );
-	GetOwner()->RemoveAmmo( 1, GetPrimaryAmmoType() );
+	GetOwner()->RemoveAmmo( 2, GetPrimaryAmmoType() );
 	WeaponSound( SINGLE );
 
 	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.1f;
