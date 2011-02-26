@@ -36,7 +36,7 @@ private:
 public:
 	virtual const Vector& GetBulletSpread( void )
 	{
-		static Vector cone = VECTOR_CONE_20DEGREES;
+		static Vector cone = VECTOR_CONE_10DEGREES;
 		return cone;
 	}
 
@@ -105,8 +105,8 @@ void CWeaponShotgundouble::Pump( void )
 	// Finish reload animation
 	SendWeaponAnim( ACT_SHOTGUN_PUMP );
 
-	pOwner->m_flNextAttack	= gpGlobals->curtime + 1.2f;
-	m_flNextPrimaryAttack	= gpGlobals->curtime + 1.2f;
+	pOwner->m_flNextAttack	= gpGlobals->curtime + 0.7f;
+	m_flNextPrimaryAttack	= gpGlobals->curtime + 0.7f;
 }
 void CWeaponShotgundouble::PrimaryAttack( void )
 {
@@ -138,7 +138,7 @@ void CWeaponShotgundouble::PrimaryAttack( void )
 	Vector	vecSrc		= pPlayer->Weapon_ShootPosition( );
 	Vector	vecAiming	= pPlayer->GetAutoaimVector( AUTOAIM_10DEGREES );	
 
-	FireBulletsInfo_t info( 12, vecSrc, vecAiming, GetBulletSpread(), MAX_TRACE_LENGTH, m_iPrimaryAmmoType );
+	FireBulletsInfo_t info( 14, vecSrc, vecAiming, GetBulletSpread(), MAX_TRACE_LENGTH, m_iPrimaryAmmoType );
 	info.m_pAttacker = pPlayer;
 
 	// Fire the bullets, and force the first shot to be perfectly accuracy
@@ -162,8 +162,8 @@ bool CWeaponShotgundouble::Deploy( void )
 	}
 	else
 	{
-		pPlayer->SetNextAttack( gpGlobals->curtime + 0.6 );
-		m_flNextPrimaryAttack = gpGlobals->curtime + 0.6;
+		pPlayer->SetNextAttack( gpGlobals->curtime + 0.4 );
+		m_flNextPrimaryAttack = gpGlobals->curtime + 0.4;
 	}
 		return true;
 }
