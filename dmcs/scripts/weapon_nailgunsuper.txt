@@ -14,7 +14,7 @@ WeaponData
 
 	"primary_ammo"		"XBowBolt"
 	"secondary_ammo"	"None"
-	"damage"		"3"
+	"damage"		"30"
 
 	"weight"		"3"
 	"item_flags"		"0"
