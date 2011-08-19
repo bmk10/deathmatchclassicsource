@@ -1,0 +1,10 @@
+"LightmappedGeneric"
+{
+	$basetexture				"door/metal/beam01b"
+	$bumpmap				"door/metal/beam01_nrm"
+	$envmap					"env_cubemap"
+	$normalmapalphaenvmapmask		"1"
+	$ssbump					"1"
+	$surfaceprop				"metal"
+	%keywords				"door"
+}
