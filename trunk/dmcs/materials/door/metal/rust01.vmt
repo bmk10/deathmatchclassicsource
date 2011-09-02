@@ -1,0 +1,13 @@
+"LightmappedGeneric"
+{
+	$basetexture				"door/metal/rust01"
+	$bumpmap				"door/metal/rust01_nrm"
+	$envmap					"env_cubemap"
+	$envmapcontrast				"0.4"
+	$envmapsaturation				"0.6"
+	$envmaptint				"[0.6 0.6 0.6]"
+	$normalmapalphaenvmapmask		"1"
+	$ssbump					"1"
+	$surfaceprop				"metal"
+	%keywords				"door"
+}

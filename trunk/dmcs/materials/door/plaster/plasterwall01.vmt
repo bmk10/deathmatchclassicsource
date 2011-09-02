@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	$basetexture				"door/plaster/plasterwall01"
+	$bumpmap				"door/plaster/plasterwall01_nrm"
+	$ssbump					"1"
+	$surfaceprop				"concrete"
+	%keywords				"door"
+}

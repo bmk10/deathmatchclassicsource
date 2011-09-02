@@ -1,7 +1,7 @@
 "LightmappedGeneric"
 {
 	$basetexture		"door/brick/brickwall01a"
-	$bumpmap		"door/brick/brickwall01a_nrm"
+	$bumpmap		"door/brick/brickwall01_nrm"
 	$ssbump			"1"
 	$surfaceprop		"brick"
 	%keywords		"door"
