@@ -1,0 +1,43 @@
+// DMCS FGD
+
+@include "base.fgd"
+@include "hl2mp.fgd"
+
+@BaseClass color(0 0 200) base(Targetname, Angles) = Item
+[
+	output OnPlayerPickup(void) : "Fires when the player picks up this object."
+	output OnPlayerDenied(void) : "Fires when the player attempts to pick up this object but is denied."
+	spawnflags(flags) =
+		[
+			1 : "Start Asleep" : 0
+			2 : "Motion Disabled" : 0
+		]
+]
+
+@PointClass base(Item) studio("models/armour_g.mdl") = item_armour_green : "Green Armour" []
+@PointClass base(Item) studio("models/armour_r.mdl") = item_armour_red : "Red Armour" []
+@PointClass base(Item) studio("models/armour_y.mdl") = item_armour_yellow : "Yellow Armour" []
+
+@PointClass base(Item) studio("models/w_medkits.mdl") = item_health_small : "Small Medkit" []
+@PointClass base(Item) studio("models/w_medkit.mdl") = item_health_reg : "Medkit" []
+@PointClass base(Item) studio("models/w_medkitl.mdl") = item_health_large : "Large Medkit" []
+
+@PointClass base(Item) studio("models/pow_invis.mdl") = power_invis : "Invisibility" []
+@PointClass base(Item) studio("models/pow_invuln.mdl") = power_invuln : "Invulnerability" []
+@PointClass base(Item) studio("models/pow_quad.mdl") = power_quad : "Quad Damage" []
+
+@PointClass base(Item) studio("models/b_nail0.mdl") = small_ammo_nail : "Small Nail Ammo" []
+@PointClass base(Item) studio("models/b_nail1.mdl") = large_ammo_nail : "Large Nail Ammo" []
+@PointClass base(Item) studio("models/w_shotbox.mdl") = small_ammo_shot : "Small Shotgun Ammo" []
+@PointClass base(Item) studio("models/w_shotbox_big.mdl") = large_ammo_shot : "Large Shotgun Ammo" []
+@PointClass base(Item) studio("models/w_rpgammo.mdl") = small_ammo_rpg : "Small Rocket Ammo" []
+@PointClass base(Item) studio("models/w_rpgammo_big.mdl") = large_ammo_rpg : "Large Rocket Ammo" []
+@PointClass base(Item) studio("models/w_battery.mdl") = small_ammo_batt : "Small Battery" []
+@PointClass base(Item) studio("models/w_batteryl.mdl") = large_ammo_batt : "Large Battery" []
+
+@PointClass base(Item) studio("models/g_shot2.mdl") = weapon_shotgundouble : "Super Shotgun" []
+@PointClass base(Item) studio("models/g_nail.mdl") = weapon_nailgun : "Nailgun" []
+@PointClass base(Item) studio("models/g_nail2.mdl") = weapon_nailgunsuper : "Super Nailgun" []
+@PointClass base(Item) studio("models/g_rock.mdl") = weapon_grenadelauncher : "Grenade Launcher" []
+@PointClass base(Item) studio("models/g_rock2.mdl") = weapon_rpg : "Rocket Launcher" []
+@PointClass base(Item) studio("models/g_light.mdl") = weapon_shaft : "SHAFT" []
