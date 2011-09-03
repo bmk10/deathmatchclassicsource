@@ -14,17 +14,17 @@
 		]
 ]
 
-@PointClass base(Item) studio("models/armour_g.mdl") = item_armour_green : "Green Armour" []
-@PointClass base(Item) studio("models/armour_r.mdl") = item_armour_red : "Red Armour" []
-@PointClass base(Item) studio("models/armour_y.mdl") = item_armour_yellow : "Yellow Armour" []
+@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_armour_green : "Green Armour" []
+@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_armour_red : "Red Armour" []
+@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_armour_yellow : "Yellow Armour" []
 
-@PointClass base(Item) studio("models/w_medkits.mdl") = item_health_small : "Small Medkit" []
-@PointClass base(Item) studio("models/w_medkit.mdl") = item_health_reg : "Medkit" []
-@PointClass base(Item) studio("models/w_medkitl.mdl") = item_health_large : "Large Medkit" []
+@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_health_small : "Small Medkit" []
+@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_health_reg : "Medkit" []
+@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_health_large : "Large Medkit" []
 
-@PointClass base(Item) studio("models/pow_invis.mdl") = power_invis : "Invisibility" []
-@PointClass base(Item) studio("models/pow_invuln.mdl") = power_invuln : "Invulnerability" []
-@PointClass base(Item) studio("models/pow_quad.mdl") = power_quad : "Quad Damage" []
+@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = power_invis : "Invisibility" []
+@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = power_invuln : "Invulnerability" []
+@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = power_quad : "Quad Damage" []
 
 @PointClass base(Item) studio("models/b_nail0.mdl") = small_ammo_nail : "Small Nail Ammo" []
 @PointClass base(Item) studio("models/b_nail1.mdl") = large_ammo_nail : "Large Nail Ammo" []
