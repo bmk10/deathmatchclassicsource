@@ -10,7 +10,7 @@ WeaponData
 	"bucket"			"2"
 	"bucket_position"	"1"
 
-	"default_clip"		"-1"
+	"default_clip"			"20"
 
 	"primary_ammo"		"XBowBolt"
 	"secondary_ammo"	"None"

@@ -3,7 +3,7 @@
 @include "base.fgd"
 @include "hl2mp.fgd"
 
-@BaseClass color(0 0 200) base(Targetname, Angles) = Item
+@BaseClass base(Targetname, Angles, Shadow, BaseFadeProp) = BasePickup
 [
 	output OnPlayerPickup(void) : "Fires when the player picks up this object."
 	output OnPlayerDenied(void) : "Fires when the player attempts to pick up this object but is denied."
@@ -14,30 +14,31 @@
 		]
 ]
 
-@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_armour_green : "Green Armour" []
-@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_armour_red : "Red Armour" []
-@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_armour_yellow : "Yellow Armour" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_armour_green : "Green Armor" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_armour_red : "Red Armor" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_armour_yellow : "Yellow Armor" []
 
-@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_health_small : "Small Medkit" []
-@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_health_reg : "Medkit" []
-@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = item_health_large : "Large Medkit" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_health_small : "Small Medkit" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_health_reg : "Medkit" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_health_large : "Large Medkit" []
 
-@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = power_invis : "Invisibility" []
-@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = power_invuln : "Invulnerability" []
-@PointClass base(Item) studio("models/weapons/W_crowbar.mdl") = power_quad : "Quad Damage" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = power_invis : "Invisibility" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = power_invuln : "Invulnerability" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = power_quad : "Quad Damage" []
 
-@PointClass base(Item) studio("models/b_nail0.mdl") = small_ammo_nail : "Small Nail Ammo" []
-@PointClass base(Item) studio("models/b_nail1.mdl") = large_ammo_nail : "Large Nail Ammo" []
-@PointClass base(Item) studio("models/w_shotbox.mdl") = small_ammo_shot : "Small Shotgun Ammo" []
-@PointClass base(Item) studio("models/w_shotbox_big.mdl") = large_ammo_shot : "Large Shotgun Ammo" []
-@PointClass base(Item) studio("models/w_rpgammo.mdl") = small_ammo_rpg : "Small Rocket Ammo" []
-@PointClass base(Item) studio("models/w_rpgammo_big.mdl") = large_ammo_rpg : "Large Rocket Ammo" []
-@PointClass base(Item) studio("models/w_battery.mdl") = small_ammo_batt : "Small Battery" []
-@PointClass base(Item) studio("models/w_batteryl.mdl") = large_ammo_batt : "Large Battery" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = small_ammo_nail : "Small Nail Ammo" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = large_ammo_nail : "Large Nail Ammo" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = small_ammo_shot : "Small Shotgun Ammo" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = large_ammo_shot : "Large Shotgun Ammo" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = small_ammo_rpg : "Small Rocket Ammo" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdll") = large_ammo_rpg : "Large Rocket Ammo" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = small_ammo_batt : "Small Battery" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = large_ammo_batt : "Large Battery" []
 
-@PointClass base(Item) studio("models/g_shot2.mdl") = weapon_shotgundouble : "Super Shotgun" []
-@PointClass base(Item) studio("models/g_nail.mdl") = weapon_nailgun : "Nailgun" []
-@PointClass base(Item) studio("models/g_nail2.mdl") = weapon_nailgunsuper : "Super Nailgun" []
-@PointClass base(Item) studio("models/g_rock.mdl") = weapon_grenadelauncher : "Grenade Launcher" []
-@PointClass base(Item) studio("models/g_rock2.mdl") = weapon_rpg : "Rocket Launcher" []
-@PointClass base(Item) studio("models/g_light.mdl") = weapon_shaft : "SHAFT" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_weapon_shotgun : "Shotgun" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_weapon_doubleshotgun : "Super Shotgun" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_weapon_nailgun : "Nailgun" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_weapon_supernailgun : "Super Nailgun" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_weapon_grenadelauncher : "Grenade Launcher" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_weapon_rocketlauncher : "Rocket Launcher" []
+@PointClass base(BasePickup) studio("models/weapons/W_crowbar.mdl") = item_weapon_shaft : "SHAFT" []

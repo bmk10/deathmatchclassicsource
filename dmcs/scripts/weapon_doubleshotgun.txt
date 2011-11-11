@@ -1,4 +1,4 @@
-// Shotgun
+// Double Shotgun
 
 WeaponData
 {
@@ -12,6 +12,7 @@ WeaponData
 
 	"primary_ammo"			"Buckshot"
 	"secondary_ammo"		"None"
+	"default_clip"			"20"
 
 	"weight"				"4"
 	"item_flags"			"0"
