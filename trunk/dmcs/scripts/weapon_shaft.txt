@@ -10,7 +10,7 @@ WeaponData
 	"bucket"			"4"
 	"bucket_position"		"0"
 
-	"clip_size"			"-1"
+	"default_clip"			"20"
 
 	"primary_ammo"			"Cells"
 
